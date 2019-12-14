@@ -525,7 +525,6 @@ F15 "BUT_BLE" O R 7550 4550 50
 F16 "BUT_CFG" O R 7550 4650 50 
 F17 "BUT_USER" O R 7550 4750 50 
 F18 "STRIP3" I L 6600 4500 50 
-F19 "STRIP4" I L 6600 4600 50 
 $EndSheet
 $Comp
 L power:GND #PWR?
@@ -1169,10 +1168,6 @@ Text Label 4250 5450 0    50   ~ 0
 LED_USER
 Text Label 6500 4500 2    50   ~ 0
 STRIP3
-Text Label 6500 4600 2    50   ~ 0
-STRIP4
-Wire Wire Line
-	6500 4600 6600 4600
 Wire Wire Line
 	6600 4500 6500 4500
 Text Label 4250 4450 0    50   ~ 0
@@ -1183,8 +1178,6 @@ Text Label 4250 4650 0    50   ~ 0
 STRIP2
 Text Label 4250 4750 0    50   ~ 0
 STRIP3
-Text Label 4250 4850 0    50   ~ 0
-STRIP4
 Wire Wire Line
 	4250 4450 4150 4450
 Wire Wire Line
@@ -1193,8 +1186,6 @@ Wire Wire Line
 	4250 4650 4150 4650
 Wire Wire Line
 	4250 4750 4150 4750
-Wire Wire Line
-	4250 4850 4150 4850
 Wire Wire Line
 	4250 4350 4150 4350
 Text Label 4250 4350 0    50   ~ 0
