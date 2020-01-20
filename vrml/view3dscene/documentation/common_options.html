@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- meta suggested by bootstrap, but generally sensible -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Author" content="Michalis Kamburelis">
+
+
+
+  <title>Standard command-line options | Castle Game Engine</title>
+
+
+<!-- Bootstrap -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Colorbox -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/example3/colorbox.css" type="text/css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml"
+  title="Castle Game Engine - News Feed"
+  href="https://castle-engine.sourceforge.io/news_feed.php">
+
+<link type="text/css" rel="stylesheet" media="all" href="https://castle-engine.sourceforge.io/castle-engine.css">
+
+
+<script type="text/javascript" src="https://castle-engine.sourceforge.io/castle-engine.js"></script>
+
+<style type="text/css">
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for delphi
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.delphi .de1, .delphi .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.delphi  {font-family:monospace;}
+.delphi .imp {font-weight: bold; color: red;}
+.delphi li, .delphi .li1 {font-weight: normal; vertical-align:top;}
+.delphi .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.delphi .li2 {font-weight: bold; vertical-align:top;}
+.delphi .kw1 {color: #000000; font-weight: bold;}
+.delphi .kw2 {color: #000000; font-weight: bold;}
+.delphi .kw3 {color: #000066;}
+.delphi .kw4 {color: #000066; font-weight: bold;}
+.delphi .co1 {color: #808080; font-style: italic;}
+.delphi .co2 {color: #008000; font-style: italic;}
+.delphi .coMULTI {color: #808080; font-style: italic;}
+.delphi .es0 {color: #ff0000; font-weight: bold;}
+.delphi .br0 {color: #000066;}
+.delphi .sy0 {color: #000066;}
+.delphi .sy1 {color: #000066;}
+.delphi .sy2 {color: #000066;}
+.delphi .sy3 {color: #000066;}
+.delphi .st0 {color: #ff0000;}
+.delphi .nu0 {color: #0000ff;}
+.delphi .me1 {color: #006600;}
+.delphi .re0 {color: #0000cc;}
+.delphi .re1 {color: #ff0000;}
+.delphi .ln-xtra, .delphi li.ln-xtra, .delphi div.ln-xtra {background-color: #ffc;}
+.delphi span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for vrmlx3d
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.vrmlx3d .de1, .vrmlx3d .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.vrmlx3d  {font-family:monospace;}
+.vrmlx3d .imp {font-weight: bold; color: red;}
+.vrmlx3d li, .vrmlx3d .li1 {font-weight: normal; vertical-align:top;}
+.vrmlx3d .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.vrmlx3d .li2 {font-weight: bold; vertical-align:top;}
+.vrmlx3d .kw1 {color: #000000; font-weight: bold;}
+.vrmlx3d .kw2 {color: #c20cb9; font-weight: bold;}
+.vrmlx3d .kw3 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .co0 {color: #666666; font-style: italic;}
+.vrmlx3d .co1 {color: #800000;}
+.vrmlx3d .co2 {color: #cc0000; font-style: italic;}
+.vrmlx3d .co3 {color: #000000; font-weight: bold;}
+.vrmlx3d .co4 {color: #666666;}
+.vrmlx3d .es1 {color: #000099; font-weight: bold;}
+.vrmlx3d .es2 {color: #007800;}
+.vrmlx3d .es3 {color: #007800;}
+.vrmlx3d .es4 {color: #007800;}
+.vrmlx3d .es5 {color: #780078;}
+.vrmlx3d .es_h {color: #000099; font-weight: bold;}
+.vrmlx3d .br0 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .sy0 {color: #000000; font-weight: bold;}
+.vrmlx3d .st0 {color: #ff0000;}
+.vrmlx3d .st_h {color: #ff0000;}
+.vrmlx3d .nu0 {color: #000000;}
+.vrmlx3d .re0 {color: #007800;}
+.vrmlx3d .re1 {color: #007800;}
+.vrmlx3d .re2 {color: #007800;}
+.vrmlx3d .re4 {color: #007800;}
+.vrmlx3d .re5 {color: #660033;}
+.vrmlx3d .ln-xtra, .vrmlx3d li.ln-xtra, .vrmlx3d div.ln-xtra {background-color: #ffc;}
+.vrmlx3d span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c .de1, .c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c  {font-family:monospace;}
+.c .imp {font-weight: bold; color: red;}
+.c li, .c .li1 {font-weight: normal; vertical-align:top;}
+.c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c .li2 {font-weight: bold; vertical-align:top;}
+.c .kw1 {color: #b1b100;}
+.c .kw2 {color: #000000; font-weight: bold;}
+.c .kw3 {color: #000066;}
+.c .kw4 {color: #993333;}
+.c .co1 {color: #666666; font-style: italic;}
+.c .co2 {color: #339933;}
+.c .coMULTI {color: #808080; font-style: italic;}
+.c .es0 {color: #000099; font-weight: bold;}
+.c .es1 {color: #000099; font-weight: bold;}
+.c .es2 {color: #660099; font-weight: bold;}
+.c .es3 {color: #660099; font-weight: bold;}
+.c .es4 {color: #660099; font-weight: bold;}
+.c .es5 {color: #006699; font-weight: bold;}
+.c .br0 {color: #009900;}
+.c .sy0 {color: #339933;}
+.c .st0 {color: #ff0000;}
+.c .nu0 {color: #0000dd;}
+.c .nu6 {color: #208080;}
+.c .nu8 {color: #208080;}
+.c .nu12 {color: #208080;}
+.c .nu16 {color:#800080;}
+.c .nu17 {color:#800080;}
+.c .nu18 {color:#800080;}
+.c .nu19 {color:#800080;}
+.c .me1 {color: #202020;}
+.c .me2 {color: #202020;}
+.c .ln-xtra, .c li.ln-xtra, .c div.ln-xtra {background-color: #ffc;}
+.c span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for xml
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.xml .de1, .xml .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.xml  {font-family:monospace;}
+.xml .imp {font-weight: bold; color: red;}
+.xml li, .xml .li1 {font-weight: normal; vertical-align:top;}
+.xml .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.xml .li2 {font-weight: bold; vertical-align:top;}
+.xml .es0 {color: #000099; font-weight: bold;}
+.xml .br0 {color: #66cc66;}
+.xml .sy0 {color: #66cc66;}
+.xml .st0 {color: #ff0000;}
+.xml .nu0 {color: #cc66cc;}
+.xml .sc-1 {color: #808080; font-style: italic;}
+.xml .sc0 {color: #00bbdd;}
+.xml .sc1 {color: #ddbb00;}
+.xml .sc2 {color: #339933;}
+.xml .sc3 {color: #009900;}
+.xml .re0 {color: #000066;}
+.xml .re1 {color: #000000; font-weight: bold;}
+.xml .re2 {color: #000000; font-weight: bold;}
+.xml .ln-xtra, .xml li.ln-xtra, .xml div.ln-xtra {background-color: #ffc;}
+.xml span.xtra { display:block; }
+</style>
+
+<script type="text/javascript">
+var _bftn_options = {
+//always_show_widget: true // @type {Boolean}
+};
+</script>
+<!-- script src="https://widget.battleforthenet.com/widget.js" async></script -->
+
+<script src="https://apis.google.com/js/platform.js" async defer></script></head>
+
+<body >
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Uncomment this for toggable navbar -->
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      -->
+
+      <ul class="nav nav-tabs navbar-right">
+        <li><a href="https://patreon.com/castleengine" class="navbar-link">Support the engine on<br><img class="patreon-logo" src="https://castle-engine.sourceforge.io/images/patreonlogoorange_45px.png" alt="Patreon" /></a></li>
+      </ul>
+
+      <!--button type="button" class="btn btn-default navbar-btn navbar-right" style="margin-right: 0px;"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height: 40px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></button-->
+
+      <!--p class="navbar-text navbar-right"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height:50px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></p-->
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          <img alt="" src="https://castle-engine.sourceforge.io/images/header_icon.png">
+        </a>
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          Castle Game Engine
+        </a>
+      </div>
+      
+      
+    <!-- Uncomment this for toggable navbar -->
+    <!--div class="collapse navbar-collapse" id="main-navbar-collapse-1" -->
+    <ul class="nav nav-tabs"><li class=""><a href="https://castle-engine.sourceforge.io/index.php">Download</a></li><li class=""><a href="https://castle-engine.sourceforge.io/wp/">News</a></li><li class=""><a href="https://castle-engine.sourceforge.io/features.php">Features</a></li><li class=" dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="https://castle-engine.sourceforge.io/documentation.php">Getting Started</a></li><li><a href="https://castle-engine.sourceforge.io/manual_intro.php">Manual</a></li><li><a href="https://castle-engine.sourceforge.io/creating_data_intro.php">Creating Game Data</a></li><li><a href="https://castle-engine.sourceforge.io/apidoc/html/index.html">API Reference</a></li><li><a href="http://castle-engine.io/modern_pascal_introduction.html">Modern Object Pascal Introduction</a></li><li><a href="https://castle-engine.sourceforge.io/documentation_more.php">More...</a></li></ul></li><li class=""><a href="vrml_x3d.html">Scene Graph (X3D)</a></li><li class=""><a href="view3dscene.html" title="VRML / X3D browser, and a viewer for other 3D model formats">view3dscene</a></li><li class=""><a href="https://castle-engine.sourceforge.io/talk.php" title="Ask for help, report bugs, discuss features">Talk with us</a></li><li class=" active"><a href="https://castle-engine.sourceforge.io/all_programs.php" title="All the games and tools using our 3D engine">Games and Tools</a></li>
+    </ul>
+    <!-- Uncomment this for toggable navbar -->
+    <!--/div-->
+    </div>
+
+    
+  </nav><div class="container-fluid">
+<h2>Standard command-line options</h2>
+
+<p>This page describes just some usual conventions used when interpreting
+command-line options by my programs (actually, these conventions are widely
+known and used by most good programs in the world) :
+<ul>
+  <li><p>Long options start with <code>--</code> (two dashes), like
+    <code>--long-option</code>. Short options start with <code>-</code> (one dash)
+    and consist of one letter, like <code>-p</code>. The advantage of the long form
+    is that you can easily remember it, the advantage of the short form is
+    that you have less typing. Many options have both forms : long and
+    short and you can use whichever you want.
+
+  <li><p>All my programs should accept option <code>--help</code>
+    (short form <code>-h</code>). Using this option instructs the program
+    to print some short usage instructions and a short description of
+    available options.
+
+  <li><p>All my programs should accept option <code>--version</code>
+    (short form <code>-v</code>). Using this option instructs the program
+    to print version number. Sometimes (for <code>help2man</code> and consistency
+    with other Unix utilities) it's preceded by the program name.
+    Here's a description of <a href="https://castle-engine.sourceforge.io/versioning.php">versioning scheme used in all my programs</a>.
+    Version number is always printed on standard output, never in a
+    message box or something that; this allows to use calls like
+    <code>program_name --version</code> in batch scripts, makefiles etc.
+
+    <p><i>Note for Windows users of my programs that don't create a console</i>
+    (e.g. <a href="https://castle-engine.sourceforge.io/malfunction.php">malfunction</a>,
+    <a href="https://castle-engine.sourceforge.io/kambi_lines.php">kambi_lines</a> or
+    <a href="https://castle-engine.sourceforge.io/glviewimage.php">glViewImage</a>):
+    when Windows program does not explicitly create a console,
+    it usually has no standard output available.
+    You must explicitly redirect it's stdout when using option <code>--version</code>.
+
+  <li><p>If option requires one argument, you can give it as<br>
+    <code>--long-option=argument</code> (with '=') or<br>
+    <code>--long-option argument</code> (passing argument as separate parameter) or<br>
+    <code>-p=argument</code> (same as the first one, but using short form) or<br>
+    <code>-p argument</code> (same as the second one, but using short form).
+
+    <p>E.g. following methods of running
+    <a href="view3dscene.html">view3dscene</a>    are equivalent:
+<pre>
+  view3dscene --navigation=Examine scene.wrl
+  view3dscene --navigation Examine scene.wrl
+</pre>
+
+    <p>If option <i>allows</i> but <i>not requires</i> an argument,
+    you have to use <code>--long-option=argument</code> or
+    <code>-p=argument</code> if you want to give an argument.
+
+  <li><p>Short options can be <i>combined</i>. This means that you
+    can put more than one short option in a one parameter, e.g.
+<pre>
+  program -abc
+</pre>
+    means the same as
+<pre>
+  program -a -b -c
+</pre>
+
+    <p>Note that only the last option in such "combined parameter" may
+    take an argument, e.g.
+<pre>
+  program -de=50
+</pre>
+    means the same as
+<pre>
+  program -d -e=50
+</pre>
+   but if you want to give an argument for <code>-d</code> and <code>-e</code>,
+   you can't combine them : you must use something like
+<pre>
+  program -d=40 -e=50
+</pre>
+
+  <li><p>Special option <code>--</code> means "do not interpret following parameters".
+    You can use it if you have files with names beginning with a <code>'-'</code>.
+
+    <p>E.g. suppose you have a file named <code>--file.png</code> and you want
+    to view it using <a href="https://castle-engine.sourceforge.io/glviewimage.php">glViewImage</a>.
+    If you call
+    <pre>  glViewImage --file.png</pre>
+    then glViewImage will exit with an error <i>'invalid
+    long option "--file.png"'</i>. Even worse, if you have a file named
+    <code>--geometry</code> (<code>--geometry</code> not only begins with a dash
+    but it even IS a valid option for glViewImage) and you call
+    <pre>  glViewImage --geometry</pre>
+    then glViewImage will try to interpret the <code>--geometry</code> option
+    and will give an error <i>'missing argument for "--geometry"'</i>.
+    So you can force glViewImage to treat <code>--file.png</code> or
+    <code>--geometry</code> as file names using :
+<pre>
+  glViewImage -- --file.png
+  glViewImage -- --geometry
+</pre>
+
+</ul>
+
+</div>
+
+  <div class="panel-footer">
+    <p><span class="page_copyright">Copyright <a href="http://michalis.ii.uni.wroc.pl/~michalis/">Michalis Kamburelis</a>.
+    Some images copyright <a href="http://cat-astrophe-games.com/">Cat-astrophe Games</a> and Paweł Wojciechowicz.
+    You can redistribute this on terms of the
+    <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</span>
+
+    <p><a href="https://sourceforge.net/projects/castle-engine">Hosted by SourceForge.net</a>.
+
+    <p>We use <a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>.
+    Like every other frickin' website on the Internet.
+    Blink twice if you understand.
+  </div>
+
+  
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins).
+     Used also by colorbox. -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/js/jquery.min.js" type="text/javascript"></script>
+<!-- Include colorbox after jQuery is known -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery('a.screenshot').colorbox({opacity: 0.9, rel:'screenshot', maxWidth:'90%', maxHeight:'90%'});
+</script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+

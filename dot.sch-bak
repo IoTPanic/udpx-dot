@@ -38,13 +38,13 @@ $EndComp
 $Comp
 L Connector:Conn_01x04_Female J1
 U 1 1 5DF5623E
-P 850 1250
-F 0 "J1" H 742 1535 50  0000 C CNN
-F 1 "PWR" H 742 1444 50  0000 C CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-4_P5.08mm" H 850 1250 50  0001 C CNN
-F 3 "~" H 850 1250 50  0001 C CNN
-	1    850  1250
-	-1   0    0    -1  
+P 850 1350
+F 0 "J1" H 742 1635 50  0000 C CNN
+F 1 "PWR" H 742 1544 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-4_P5.08mm" H 850 1350 50  0001 C CNN
+F 3 "~" H 850 1350 50  0001 C CNN
+	1    850  1350
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	1050 1350 1150 1350
@@ -493,27 +493,31 @@ F 3 "" H 2800 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 6600 4150 950  1650
+S 6600 4150 950  2150
 U 5E0F8861
 F0 "Peripherals" 50
 F1 "peripherals.sch" 50
-F2 "LED_BLE" I L 6600 5500 50 
-F3 "LED_WIFI" I L 6600 5600 50 
-F4 "LED_USER" I L 6600 5700 50 
+F2 "LED_BLE" I L 6600 6000 50 
+F3 "LED_WIFI" I L 6600 6100 50 
+F4 "LED_USER" I L 6600 6200 50 
 F5 "STRIP0" I L 6600 4200 50 
 F6 "STRIP1" I L 6600 4300 50 
 F7 "STRIP2" I L 6600 4400 50 
-F8 "SD_DAT2" I L 6600 4950 50 
-F9 "SD_DAT3" I L 6600 5050 50 
-F10 "SD_CMD" I L 6600 5250 50 
-F11 "SD_CLK" I L 6600 5150 50 
-F12 "SD_DAT0" I L 6600 4750 50 
-F13 "SD_DAT1" I L 6600 4850 50 
-F14 "SD_DET" I L 6600 5350 50 
+F8 "SD_DAT2" I L 6600 5450 50 
+F9 "SD_DAT3" I L 6600 5550 50 
+F10 "SD_CMD" I L 6600 5750 50 
+F11 "SD_CLK" I L 6600 5650 50 
+F12 "SD_DAT0" I L 6600 5250 50 
+F13 "SD_DAT1" I L 6600 5350 50 
+F14 "SD_DET" I L 6600 5850 50 
 F15 "BUT_BLE" O R 7550 4550 50 
 F16 "BUT_CFG" O R 7550 4650 50 
 F17 "BUT_USER" O R 7550 4750 50 
 F18 "STRIP3" I L 6600 4500 50 
+F19 "STRIP4" I L 6600 4600 50 
+F20 "STRIP5" I L 6600 4700 50 
+F21 "STRIP6" I L 6600 4800 50 
+F22 "STRIP7" I L 6600 4900 50 
 $EndSheet
 $Comp
 L power:GND #PWR0116
@@ -669,34 +673,23 @@ $EndComp
 $Comp
 L power:+3.3V #PWR0124
 U 1 1 5E1AD7A0
-P 8650 1400
-F 0 "#PWR0124" H 8650 1250 50  0001 C CNN
-F 1 "+3.3V" H 8665 1573 50  0000 C CNN
-F 2 "" H 8650 1400 50  0001 C CNN
-F 3 "" H 8650 1400 50  0001 C CNN
-	1    8650 1400
+P 8800 1400
+F 0 "#PWR0124" H 8800 1250 50  0001 C CNN
+F 1 "+3.3V" H 8815 1573 50  0000 C CNN
+F 2 "" H 8800 1400 50  0001 C CNN
+F 3 "" H 8800 1400 50  0001 C CNN
+	1    8800 1400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8650 1500 8800 1500
-Connection ~ 8650 1500
-Wire Wire Line
-	8650 1500 8650 1400
-Wire Wire Line
-	8800 1500 8800 1600
-Wire Wire Line
-	8600 1500 8650 1500
-Wire Wire Line
-	8600 1600 8600 1500
 $Comp
 L power:GND #PWR0125
 U 1 1 5E1A1A9F
-P 8850 3600
-F 0 "#PWR0125" H 8850 3350 50  0001 C CNN
-F 1 "GND" H 8855 3427 50  0000 C CNN
-F 2 "" H 8850 3600 50  0001 C CNN
-F 3 "" H 8850 3600 50  0001 C CNN
-	1    8850 3600
+P 8850 3300
+F 0 "#PWR0125" H 8850 3050 50  0001 C CNN
+F 1 "GND" H 8855 3127 50  0000 C CNN
+F 2 "" H 8850 3300 50  0001 C CNN
+F 3 "" H 8850 3300 50  0001 C CNN
+	1    8850 3300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -712,16 +705,6 @@ F 3 "" H 7700 3250 50  0001 C CNN
 	1    7700 3250
 	1    0    0    -1  
 $EndComp
-Connection ~ 7850 2100
-Wire Wire Line
-	7800 2100 7850 2100
-Wire Wire Line
-	7800 2750 7800 2100
-Wire Wire Line
-	7700 2500 7400 2500
-Connection ~ 7700 2500
-Wire Wire Line
-	7700 2750 7700 2500
 Wire Wire Line
 	7600 2550 7300 2550
 Connection ~ 7600 2550
@@ -758,11 +741,6 @@ Wire Wire Line
 	6400 3250 6400 3300
 Wire Wire Line
 	6700 3250 6700 3300
-Connection ~ 7850 2050
-Wire Wire Line
-	7850 2100 7850 2050
-Wire Wire Line
-	8100 2100 7850 2100
 Wire Wire Line
 	7550 1450 7850 1450
 Connection ~ 7550 1450
@@ -779,7 +757,7 @@ Wire Wire Line
 Wire Wire Line
 	7850 2050 7850 1850
 Wire Wire Line
-	7300 2050 7850 2050
+	7300 2050 7800 2050
 Wire Wire Line
 	7550 1950 7300 1950
 Wire Wire Line
@@ -814,20 +792,11 @@ Wire Wire Line
 Wire Wire Line
 	8000 2550 7600 2550
 Wire Wire Line
-	8000 2400 8000 2450
-Wire Wire Line
-	8100 2400 8000 2400
-Wire Wire Line
 	7400 2350 7400 2250
-Connection ~ 7400 2350
 Wire Wire Line
 	7300 2350 7400 2350
 Wire Wire Line
 	7400 2250 7300 2250
-Wire Wire Line
-	7400 2500 7400 2350
-Wire Wire Line
-	8100 2500 7700 2500
 $Comp
 L Connector:USB_C_Receptacle_USB2.0 J4
 U 1 1 5E1735EF
@@ -840,14 +809,6 @@ F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 6850 23
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9500 2500 9600 2500
-Text Label 9600 2500 0    50   ~ 0
-TX
-Wire Wire Line
-	9600 2400 9500 2400
-Text Label 9600 2400 0    50   ~ 0
-RX
-Wire Wire Line
 	4250 3250 4150 3250
 Text Label 4250 3250 0    50   ~ 0
 TX
@@ -855,28 +816,6 @@ Wire Wire Line
 	4250 3450 4150 3450
 Text Label 4250 3450 0    50   ~ 0
 RX
-$Comp
-L Interface_USB:CP2104 U3
-U 1 1 5E306A48
-P 8800 2500
-F 0 "U3" H 9350 1550 50  0000 C CNN
-F 1 "CP2104" H 8350 1550 50  0000 C CNN
-F 2 "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm" H 8950 1550 50  0001 L CNN
-F 3 "https://www.silabs.com/documents/public/data-sheets/cp2104.pdf" H 8250 3750 50  0001 C CNN
-	1    8800 2500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8850 3600 8850 3550
-Wire Wire Line
-	8850 3550 8900 3550
-Wire Wire Line
-	8900 3550 8900 3500
-Wire Wire Line
-	8850 3550 8800 3550
-Wire Wire Line
-	8800 3550 8800 3500
-Connection ~ 8850 3550
 $Comp
 L Device:Q_NPN_BEC Q2
 U 1 1 5E37AE6A
@@ -964,14 +903,6 @@ Wire Wire Line
 Text Label 10050 5400 0    50   ~ 0
 RESET
 Wire Wire Line
-	9600 2100 9500 2100
-Text Label 9600 2100 0    50   ~ 0
-DTR
-Wire Wire Line
-	9600 2700 9500 2700
-Text Label 9600 2700 0    50   ~ 0
-RTS
-Wire Wire Line
 	4250 3150 4150 3150
 Text Label 4250 3150 0    50   ~ 0
 GPIO0
@@ -1034,32 +965,32 @@ F 3 "~" H 7550 1200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6600 4750 6500 4750
+	6600 5250 6500 5250
 Wire Wire Line
-	6600 4850 6500 4850
+	6600 5350 6500 5350
 Wire Wire Line
-	6500 4950 6600 4950
+	6500 5450 6600 5450
 Wire Wire Line
-	6500 5050 6600 5050
+	6500 5550 6600 5550
 Wire Wire Line
-	6500 5150 6600 5150
+	6500 5650 6600 5650
 Wire Wire Line
-	6500 5250 6600 5250
+	6500 5750 6600 5750
 Wire Wire Line
-	6500 5350 6600 5350
-Text Label 6500 5350 2    50   ~ 0
+	6500 5850 6600 5850
+Text Label 6500 5850 2    50   ~ 0
 SD_DET
-Text Label 6500 5250 2    50   ~ 0
+Text Label 6500 5750 2    50   ~ 0
 SD_CMD
-Text Label 6500 5150 2    50   ~ 0
+Text Label 6500 5650 2    50   ~ 0
 SD_CLK
-Text Label 6500 5050 2    50   ~ 0
+Text Label 6500 5550 2    50   ~ 0
 SD_D3
-Text Label 6500 4950 2    50   ~ 0
+Text Label 6500 5450 2    50   ~ 0
 SD_D2
-Text Label 6500 4850 2    50   ~ 0
+Text Label 6500 5350 2    50   ~ 0
 SD_D1
-Text Label 6500 4750 2    50   ~ 0
+Text Label 6500 5250 2    50   ~ 0
 SD_D0
 Text Notes 7900 1500 0    50   ~ 0
 1.5A
@@ -1112,25 +1043,17 @@ STRIP1
 Text Label 6500 4400 2    50   ~ 0
 STRIP2
 Wire Wire Line
-	6500 5500 6600 5500
+	6500 6000 6600 6000
 Wire Wire Line
-	6500 5600 6600 5600
+	6500 6100 6600 6100
 Wire Wire Line
-	6500 5700 6600 5700
-Text Label 6500 5500 2    50   ~ 0
+	6500 6200 6600 6200
+Text Label 6500 6000 2    50   ~ 0
 LED_BLE
-Text Label 6500 5600 2    50   ~ 0
+Text Label 6500 6100 2    50   ~ 0
 LED_WIFI
-Text Label 6500 5700 2    50   ~ 0
+Text Label 6500 6200 2    50   ~ 0
 LED_USER
-Wire Wire Line
-	4250 4150 4150 4150
-Wire Wire Line
-	4250 4250 4150 4250
-Text Label 4250 4150 0    50   ~ 0
-EX_RX
-Text Label 4250 4250 0    50   ~ 0
-EX_TX
 Wire Wire Line
 	4250 5450 4150 5450
 Wire Wire Line
@@ -1159,26 +1082,14 @@ Text Label 6500 4500 2    50   ~ 0
 STRIP3
 Wire Wire Line
 	6600 4500 6500 4500
-Text Label 4250 4450 0    50   ~ 0
+Text Label 4300 4850 0    50   ~ 0
 STRIP0
-Text Label 4250 4550 0    50   ~ 0
+Text Label 4300 4750 0    50   ~ 0
 STRIP1
-Text Label 4250 4650 0    50   ~ 0
+Text Label 4300 4650 0    50   ~ 0
 STRIP2
-Text Label 4250 4750 0    50   ~ 0
+Text Label 4300 4550 0    50   ~ 0
 STRIP3
-Wire Wire Line
-	4250 4450 4150 4450
-Wire Wire Line
-	4150 4550 4250 4550
-Wire Wire Line
-	4250 4650 4150 4650
-Wire Wire Line
-	4250 4750 4150 4750
-Wire Wire Line
-	4250 4350 4150 4350
-Text Label 4250 4350 0    50   ~ 0
-EX_IRQ
 $Comp
 L Connector:Conn_01x05_Female J2
 U 1 1 5E7CD3D7
@@ -1208,59 +1119,6 @@ Wire Wire Line
 	4450 3950 4450 4050
 Wire Wire Line
 	4450 4050 4150 4050
-$Comp
-L Connector:Conn_01x05_Female J3
-U 1 1 5E80A8BF
-P 4800 6000
-F 0 "J3" V 4738 5712 50  0000 R CNN
-F 1 "EX_SERIAL" V 4647 5712 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 4800 6000 50  0001 C CNN
-F 3 "~" H 4800 6000 50  0001 C CNN
-	1    4800 6000
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	4600 6200 4600 6250
-Wire Wire Line
-	4600 6250 4450 6250
-Wire Wire Line
-	4450 6250 4450 6100
-Wire Wire Line
-	5000 6200 5000 6300
-Wire Wire Line
-	4900 6200 4900 6300
-Wire Wire Line
-	4800 6200 4800 6300
-Wire Wire Line
-	4700 6200 4700 6300
-$Comp
-L power:GND #PWR0130
-U 1 1 5E8514C5
-P 5000 6300
-F 0 "#PWR0130" H 5000 6050 50  0001 C CNN
-F 1 "GND" H 5050 6150 50  0000 C CNN
-F 2 "" H 5000 6300 50  0001 C CNN
-F 3 "" H 5000 6300 50  0001 C CNN
-	1    5000 6300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR0131
-U 1 1 5E8523D0
-P 4450 6100
-F 0 "#PWR0131" H 4450 5950 50  0001 C CNN
-F 1 "+3.3V" H 4465 6273 50  0000 C CNN
-F 2 "" H 4450 6100 50  0001 C CNN
-F 3 "" H 4450 6100 50  0001 C CNN
-	1    4450 6100
-	1    0    0    -1  
-$EndComp
-Text Label 4900 6300 3    50   ~ 0
-EX_IRQ
-Text Label 4800 6300 3    50   ~ 0
-EX_TX
-Text Label 4700 6300 3    50   ~ 0
-EX_RX
 Text Notes 2300 2000 0    50   ~ 0
 100uF -  EEE-HC1C101XP \n1mF -  EEE-FK0J102P  
 Text Notes 4900 1100 0    50   ~ 0
@@ -1299,17 +1157,6 @@ F 3 "~" H 1000 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H4
-U 1 1 5E9F6EF2
-P 1000 7400
-F 0 "H4" H 1100 7446 50  0000 L CNN
-F 1 "MountingHole" H 1100 7355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.5mm" H 1000 7400 50  0001 C CNN
-F 3 "~" H 1000 7400 50  0001 C CNN
-	1    1000 7400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Mechanical:MountingHole H1
 U 1 1 5E9F7334
 P 1000 6800
@@ -1320,4 +1167,103 @@ F 3 "~" H 1000 6800 50  0001 C CNN
 	1    1000 6800
 	1    0    0    -1  
 $EndComp
+Text Label 4300 4450 0    50   ~ 0
+STRIP4
+Text Label 4300 4350 0    50   ~ 0
+STRIP5
+Text Label 4300 4250 0    50   ~ 0
+STRIP6
+Text Label 4300 4150 0    50   ~ 0
+STRIP7
+Wire Wire Line
+	4300 4150 4150 4150
+Wire Wire Line
+	4150 4250 4300 4250
+Wire Wire Line
+	4300 4350 4150 4350
+Wire Wire Line
+	4150 4450 4300 4450
+Wire Wire Line
+	4150 4550 4300 4550
+Wire Wire Line
+	4150 4650 4300 4650
+Wire Wire Line
+	4150 4750 4300 4750
+Wire Wire Line
+	4300 4850 4150 4850
+Text Label 6500 4600 2    50   ~ 0
+STRIP4
+Text Label 6500 4800 2    50   ~ 0
+STRIP6
+Text Label 6500 4900 2    50   ~ 0
+STRIP7
+Text Label 6500 4700 2    50   ~ 0
+STRIP5
+Wire Wire Line
+	6500 4900 6600 4900
+Wire Wire Line
+	6600 4800 6500 4800
+Wire Wire Line
+	6500 4700 6600 4700
+Wire Wire Line
+	6600 4600 6500 4600
+$Comp
+L Interface_USB:CH340T U3
+U 1 1 5E2FA337
+P 8850 2450
+F 0 "U3" H 8600 1700 50  0000 C CNN
+F 1 "CH340T" H 9050 1700 50  0000 C CNN
+F 2 "Package_SO:SSOP-20_5.3x7.2mm_P0.65mm" H 9750 1650 50  0001 C CNN
+F 3 "https://cdn.sparkfun.com/datasheets/Dev/Arduino/Other/CH340DS1.PDF" H 8600 3300 50  0001 C CNN
+	1    8850 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 2250 7400 2150
+Wire Wire Line
+	7400 2150 7700 2150
+Connection ~ 7400 2250
+Wire Wire Line
+	7700 2150 7700 2750
+Connection ~ 7700 2150
+Wire Wire Line
+	7700 2150 8450 2150
+Wire Wire Line
+	7800 2050 7800 2750
+Connection ~ 7800 2050
+Wire Wire Line
+	7800 2050 7850 2050
+Wire Wire Line
+	8000 2050 8450 2050
+Wire Wire Line
+	8000 2050 8000 2450
+Wire Wire Line
+	8850 3300 8850 3250
+Wire Wire Line
+	8800 1400 8800 1500
+Wire Wire Line
+	8800 1500 8750 1500
+Wire Wire Line
+	8750 1500 8750 1550
+Wire Wire Line
+	8800 1500 8850 1500
+Wire Wire Line
+	8850 1500 8850 1550
+Connection ~ 8800 1500
+Wire Wire Line
+	9350 1850 9250 1850
+Wire Wire Line
+	9350 1750 9250 1750
+Text Label 9350 1750 0    50   ~ 0
+RX
+Text Label 9350 1850 0    50   ~ 0
+TX
+Wire Wire Line
+	9350 2550 9250 2550
+Text Label 9350 2550 0    50   ~ 0
+RTS
+Wire Wire Line
+	9350 2450 9250 2450
+Text Label 9350 2450 0    50   ~ 0
+DTR
 $EndSCHEMATC

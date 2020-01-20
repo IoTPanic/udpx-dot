@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- meta suggested by bootstrap, but generally sensible -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Author" content="Michalis Kamburelis">
+
+
+
+  <title>OpenAL (3D Sound) | Castle Game Engine</title>
+
+
+<!-- Bootstrap -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Colorbox -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/example3/colorbox.css" type="text/css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml"
+  title="Castle Game Engine - News Feed"
+  href="https://castle-engine.sourceforge.io/news_feed.php">
+
+<link type="text/css" rel="stylesheet" media="all" href="https://castle-engine.sourceforge.io/castle-engine.css">
+
+
+<script type="text/javascript" src="https://castle-engine.sourceforge.io/castle-engine.js"></script>
+
+<style type="text/css">
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for delphi
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.delphi .de1, .delphi .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.delphi  {font-family:monospace;}
+.delphi .imp {font-weight: bold; color: red;}
+.delphi li, .delphi .li1 {font-weight: normal; vertical-align:top;}
+.delphi .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.delphi .li2 {font-weight: bold; vertical-align:top;}
+.delphi .kw1 {color: #000000; font-weight: bold;}
+.delphi .kw2 {color: #000000; font-weight: bold;}
+.delphi .kw3 {color: #000066;}
+.delphi .kw4 {color: #000066; font-weight: bold;}
+.delphi .co1 {color: #808080; font-style: italic;}
+.delphi .co2 {color: #008000; font-style: italic;}
+.delphi .coMULTI {color: #808080; font-style: italic;}
+.delphi .es0 {color: #ff0000; font-weight: bold;}
+.delphi .br0 {color: #000066;}
+.delphi .sy0 {color: #000066;}
+.delphi .sy1 {color: #000066;}
+.delphi .sy2 {color: #000066;}
+.delphi .sy3 {color: #000066;}
+.delphi .st0 {color: #ff0000;}
+.delphi .nu0 {color: #0000ff;}
+.delphi .me1 {color: #006600;}
+.delphi .re0 {color: #0000cc;}
+.delphi .re1 {color: #ff0000;}
+.delphi .ln-xtra, .delphi li.ln-xtra, .delphi div.ln-xtra {background-color: #ffc;}
+.delphi span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for vrmlx3d
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.vrmlx3d .de1, .vrmlx3d .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.vrmlx3d  {font-family:monospace;}
+.vrmlx3d .imp {font-weight: bold; color: red;}
+.vrmlx3d li, .vrmlx3d .li1 {font-weight: normal; vertical-align:top;}
+.vrmlx3d .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.vrmlx3d .li2 {font-weight: bold; vertical-align:top;}
+.vrmlx3d .kw1 {color: #000000; font-weight: bold;}
+.vrmlx3d .kw2 {color: #c20cb9; font-weight: bold;}
+.vrmlx3d .kw3 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .co0 {color: #666666; font-style: italic;}
+.vrmlx3d .co1 {color: #800000;}
+.vrmlx3d .co2 {color: #cc0000; font-style: italic;}
+.vrmlx3d .co3 {color: #000000; font-weight: bold;}
+.vrmlx3d .co4 {color: #666666;}
+.vrmlx3d .es1 {color: #000099; font-weight: bold;}
+.vrmlx3d .es2 {color: #007800;}
+.vrmlx3d .es3 {color: #007800;}
+.vrmlx3d .es4 {color: #007800;}
+.vrmlx3d .es5 {color: #780078;}
+.vrmlx3d .es_h {color: #000099; font-weight: bold;}
+.vrmlx3d .br0 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .sy0 {color: #000000; font-weight: bold;}
+.vrmlx3d .st0 {color: #ff0000;}
+.vrmlx3d .st_h {color: #ff0000;}
+.vrmlx3d .nu0 {color: #000000;}
+.vrmlx3d .re0 {color: #007800;}
+.vrmlx3d .re1 {color: #007800;}
+.vrmlx3d .re2 {color: #007800;}
+.vrmlx3d .re4 {color: #007800;}
+.vrmlx3d .re5 {color: #660033;}
+.vrmlx3d .ln-xtra, .vrmlx3d li.ln-xtra, .vrmlx3d div.ln-xtra {background-color: #ffc;}
+.vrmlx3d span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c .de1, .c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c  {font-family:monospace;}
+.c .imp {font-weight: bold; color: red;}
+.c li, .c .li1 {font-weight: normal; vertical-align:top;}
+.c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c .li2 {font-weight: bold; vertical-align:top;}
+.c .kw1 {color: #b1b100;}
+.c .kw2 {color: #000000; font-weight: bold;}
+.c .kw3 {color: #000066;}
+.c .kw4 {color: #993333;}
+.c .co1 {color: #666666; font-style: italic;}
+.c .co2 {color: #339933;}
+.c .coMULTI {color: #808080; font-style: italic;}
+.c .es0 {color: #000099; font-weight: bold;}
+.c .es1 {color: #000099; font-weight: bold;}
+.c .es2 {color: #660099; font-weight: bold;}
+.c .es3 {color: #660099; font-weight: bold;}
+.c .es4 {color: #660099; font-weight: bold;}
+.c .es5 {color: #006699; font-weight: bold;}
+.c .br0 {color: #009900;}
+.c .sy0 {color: #339933;}
+.c .st0 {color: #ff0000;}
+.c .nu0 {color: #0000dd;}
+.c .nu6 {color: #208080;}
+.c .nu8 {color: #208080;}
+.c .nu12 {color: #208080;}
+.c .nu16 {color:#800080;}
+.c .nu17 {color:#800080;}
+.c .nu18 {color:#800080;}
+.c .nu19 {color:#800080;}
+.c .me1 {color: #202020;}
+.c .me2 {color: #202020;}
+.c .ln-xtra, .c li.ln-xtra, .c div.ln-xtra {background-color: #ffc;}
+.c span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for xml
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.xml .de1, .xml .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.xml  {font-family:monospace;}
+.xml .imp {font-weight: bold; color: red;}
+.xml li, .xml .li1 {font-weight: normal; vertical-align:top;}
+.xml .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.xml .li2 {font-weight: bold; vertical-align:top;}
+.xml .es0 {color: #000099; font-weight: bold;}
+.xml .br0 {color: #66cc66;}
+.xml .sy0 {color: #66cc66;}
+.xml .st0 {color: #ff0000;}
+.xml .nu0 {color: #cc66cc;}
+.xml .sc-1 {color: #808080; font-style: italic;}
+.xml .sc0 {color: #00bbdd;}
+.xml .sc1 {color: #ddbb00;}
+.xml .sc2 {color: #339933;}
+.xml .sc3 {color: #009900;}
+.xml .re0 {color: #000066;}
+.xml .re1 {color: #000000; font-weight: bold;}
+.xml .re2 {color: #000000; font-weight: bold;}
+.xml .ln-xtra, .xml li.ln-xtra, .xml div.ln-xtra {background-color: #ffc;}
+.xml span.xtra { display:block; }
+</style>
+
+<script type="text/javascript">
+var _bftn_options = {
+//always_show_widget: true // @type {Boolean}
+};
+</script>
+<!-- script src="https://widget.battleforthenet.com/widget.js" async></script -->
+
+<script src="https://apis.google.com/js/platform.js" async defer></script></head>
+
+<body >
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Uncomment this for toggable navbar -->
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      -->
+
+      <ul class="nav nav-tabs navbar-right">
+        <li><a href="https://patreon.com/castleengine" class="navbar-link">Support the engine on<br><img class="patreon-logo" src="https://castle-engine.sourceforge.io/images/patreonlogoorange_45px.png" alt="Patreon" /></a></li>
+      </ul>
+
+      <!--button type="button" class="btn btn-default navbar-btn navbar-right" style="margin-right: 0px;"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height: 40px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></button-->
+
+      <!--p class="navbar-text navbar-right"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height:50px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></p-->
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          <img alt="" src="https://castle-engine.sourceforge.io/images/header_icon.png">
+        </a>
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          Castle Game Engine
+        </a>
+      </div>
+      
+      
+    <!-- Uncomment this for toggable navbar -->
+    <!--div class="collapse navbar-collapse" id="main-navbar-collapse-1" -->
+    <ul class="nav nav-tabs"><li class=""><a href="https://castle-engine.sourceforge.io/index.php">Download</a></li><li class=""><a href="https://castle-engine.sourceforge.io/wp/">News</a></li><li class=""><a href="https://castle-engine.sourceforge.io/features.php">Features</a></li><li class=" dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="https://castle-engine.sourceforge.io/documentation.php">Getting Started</a></li><li><a href="https://castle-engine.sourceforge.io/manual_intro.php">Manual</a></li><li><a href="https://castle-engine.sourceforge.io/creating_data_intro.php">Creating Game Data</a></li><li><a href="https://castle-engine.sourceforge.io/apidoc/html/index.html">API Reference</a></li><li><a href="http://castle-engine.io/modern_pascal_introduction.html">Modern Object Pascal Introduction</a></li><li><a href="https://castle-engine.sourceforge.io/documentation_more.php">More...</a></li></ul></li><li class=""><a href="vrml_x3d.html">Scene Graph (X3D)</a></li><li class=""><a href="view3dscene.html" title="VRML / X3D browser, and a viewer for other 3D model formats">view3dscene</a></li><li class=""><a href="https://castle-engine.sourceforge.io/talk.php" title="Ask for help, report bugs, discuss features">Talk with us</a></li><li class=" active"><a href="https://castle-engine.sourceforge.io/all_programs.php" title="All the games and tools using our 3D engine">Games and Tools</a></li>
+    </ul>
+    <!-- Uncomment this for toggable navbar -->
+    <!--/div-->
+    </div>
+
+    
+  </nav><div class="container-fluid">
+<h1>OpenAL (3D Sound)</h1>
+<p><a href="http://openal.org/">OpenAL</a>
+is a cool cross-platform library for 3D sound.
+All the sound played by our engine goes through it.</p>
+
+Contents:
+<div class="table_of_contents"><ol>
+<li><a href="#section_api">Developers API</a>
+</li>
+<li><a href="#section_install">Installing OpenAL</a>
+</li>
+<li><a href="#section_options">Command-line options respected by all my programs that use OpenAL</a>
+</li>
+</ol>
+</div>
+<h2 id="section_api">1. Developers API</h2>
+
+<p>For developers, the decription how to use 3D sound in <i>Castle Game Engine</i>
+is in <a href="https://castle-engine.sourceforge.io/manual_sound.php">manual about sound</a>.
+
+<h2 id="section_install">2. Installing OpenAL</h2>
+
+Generally, you can install OpenAL from many sources, you can even
+get optimized OpenAL drivers from your sound card manufacturer.
+Section below describes how to install OpenAL in the
+<i>simplest and most often case</i>.
+
+<dl>
+  <dt>Linux users:</dt>
+  <dd><p>Install appropriate package for your Linux distribution.
+    Look for a package named like <code>libopenal*</code>.</p>
+
+    <p>My games work with both common OpenAL implementations:
+    <i>OpenAL Sample Implementation</i> (the original implementation,
+    from Loki, unmaintained) and
+    <a href="http://kcat.strangesoft.net/openal.html">OpenAL Soft</a>
+    (the newer, maintained version). Modern distributions (at least Debian
+    and Ubuntu) contain <i>OpenAL Soft</i>.</p>
+    </dd>
+
+  <dt>FreeBSD users:</dt>
+  <dd><p>Simple <code>pkg_add -r openal</code> command should do
+    the trick.</p></dd>
+
+  <dt>Mac OS X users:</dt>
+  <dd><p>New Mac OS X installs have OpenAL already installed.
+    If not, you can download and run
+    <a href="http://connect.creativelabs.com/openal/Downloads/Forms/AllItems.aspx">Creative
+    free OpenAL installer for Mac OS X</a>. (Choose <i>OpenAL_Installer_OSX</i>,
+    that is <i>OpenAL Installer for MacOS X</i>.)
+    </p></dd>
+
+  <dt>Windows users:</dt>
+  <dd><p>OpenAL libraries (DLL files) should already be included in all
+    binary packages of my games under Windows. So you don't have to do anything.</p>
+
+    <p>However, you're free to remove appropriate DLL files
+    (<code>OpenAL32.dll</code> and <code>wrap_oal.dll</code>) provided in my archives
+    and install
+    OpenAL yourself. This is especially handy if you
+    want to use other OpenAL implementation than the one from Creative.
+    OpenAL libraries that are provided by default come from
+    <a href="http://connect.creativelabs.com/openal/Downloads/Forms/AllItems.aspx">Creative
+    free OpenAL installer</a> (choose <i>oalinst</i>,
+    that is <i>OpenAL Installer for Windows</i>).</dd>
+</dl>
+
+<p>You can always compile from sources. See
+<a href="http://kcat.strangesoft.net/openal.html">OpenAL Soft</a> or
+<a href="http://connect.creativelabs.com/openal/OpenAL%20Wiki/Source%20Code.aspx">Creative
+source code</a> instructions.
+
+<h2 id="section_options">3. Command-line options respected by all my programs that use OpenAL</h2>
+
+<dl class="command_line_options_list">
+  <dt>--no-sound</dt>
+  <dd><p>Don't output any sound, even if OpenAL is available and seems perfectly working.
+    Our programs will not even try to initialize OpenAL in this case.
+    Note that you <i>don't have</i> to use this option if you don't have
+    OpenAL installed. This parameter is useful only if you
+    have OpenAL, but you don't want to use it for
+    whatever reason (e.g. because your cat sleeps on the
+    chair beside you and you don't want to wake him up).</dd>
+
+  <dt>--audio-device DEVICE-NAME</dt>
+  <dd><p>Use given <code>DEVICE-NAME</code> for sound output. Usually, the default
+    one should be the best.</p>
+
+    <p>To list the available devices use the <code>--help</code> command-line option
+    (at the <code>--audio-device</code> description you will see a list of devices detected).
+    In <a href="https://castle-engine.sourceforge.io/castle.php">The Castle</a>    you can also see and choose them by the <i>Sound output device</i> menu.
+    In <a href="view3dscene.html">view3dscene</a>    you have comfortable menu <i>File -&gt; Preferences -&gt; Sound Device</i>.</p>
+
+    <dl>
+      <dt>Windows users:</dt>
+      <dd><p>You may see two devices with newer OpenAL implementation:
+        "<i>Generic Hardware</i>" (uses <i>DirectSound3D</i>)
+        and "<i>Generic Software</i>" (uses <i>DirectSound</i>).
+        As far as I know, "<i>Generic Software</i>" can only support
+        stereo sound (2 channels, not more). On the other hand, it sometimes
+        sounds better than "<i>Generic Hardware</i>".</p>
+
+        <p>So be sure to try both devices and choose the better one.</p>
+      </dd>
+
+      <dt>Linux and FreeBSD users with OpenAL-Soft (newer) implementation:</dt>
+
+      <dd><p>The default device selected on Linux should usually be ALSA,
+        and should work perfectly on modern systems.</p>
+
+        <p>A useful device is <i>"Wave File Writer"</i>, to record
+        3D sound to file. Note that you have to specify output filename
+        in config file, otherwise it will not work. For example,
+        make a file <code>$HOME/.alsoftrc</code> with two lines:</p>
+
+<pre>
+[wave]
+file = /tmp/output.wav
+</pre>
+
+        <p>For more configuration options, look into <code>/etc/openal/alsoft.conf</code>
+        that should be installed with openal-soft package. It contains
+        many comments about the possible options.</p>
+      </dd>
+
+      <dt>Linux and FreeBSD users with OpenAL Sample (older) implementation:</dt>
+      <dd><p>The following devices are available:
+
+        <table class="thin_borders">
+          <tr><th>OpenAL Name</th>
+              <th>Device</th>
+              <th>Notes</th></tr>
+          <tr><td><code>native</code></td>
+              <td>operating system native</td>
+              <td>The default device.</td></tr>
+          <tr><td><code>sdl</code></td>
+              <td>Simple DirectMedia Layer backend</td></tr>
+          <tr><td><code>arts</code></td>
+              <td>aRTs backend</td>
+              <td>Note that it seems terribly unstable. Use at your own risk.</td>
+              </tr>
+          <tr><td><code>esd</code></td>
+              <td>Esound daemon backend</td></tr>
+          <tr><td><code>alsa</code></td>
+              <td>ALSA backend</td>
+              <td><p>While it works OK,
+                it tries to acquire the exclusive ownership
+                over sound device. So, unlike most other programs that use ALSA,
+                OpenAL programs by default <i>cannot</i> play sound when some
+                other program already plays sound. For example,
+                you cannot run <code>rhyrthmbox</code> and listen to your own chosen
+                music while playing my games.
+
+                <p>The workaround is to run my games through
+                <code>aoss</code> wrapper.</td>
+              </tr>
+          <tr><td><code>waveout</code></td>
+              <td>WAVE file output</td>
+              <td><p>A file named like <code>openal-0.wav</code> will be generated
+                that contains recorded sound. </p>
+
+                <p>Note that OpenAL
+                generates somewhat buggy WAV file, and e.g. gstreamer-based
+                programs may not want to play it. My programs will play it,
+                but only because I made a workaround specifically for this.
+                I found that it's usually a good workaround
+                to convert the WAV file with sox,
+                like <code>sox openal-0.wav newopenal-0.wav</code>.
+                Such WAV file generated by sox should be readable everywhere.
+                I reported this problem to Debian OpenAL package
+                (probably a problem is general and fix will be generally usable
+                too) <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=435754">here</a>.</p>
+              </td>
+              </tr>
+          <tr><td><code>null</code></td>
+              <td>no output</td></tr>
+        </table>
+
+        <p>In the simplest case, to use some other device, e.g. <code>alsa</code>,
+        just run program with command-line option like:
+
+        <pre>  --audio-device "'(( devices '(alsa) ))"</pre>
+
+        (Yes, the first argument's character is an apostrophe,
+        and the whole argument is quoted to avoid being
+        splitted by shell. No, it's not Lisp, but it was
+        designed to look similar.)
+
+        <p>Then if you will find that e.g. <code>alsa</code> device
+        sounds best and you want my programs (and all
+        other programs that use OpenAL) to always use
+        <code>alsa</code> device, you can create file
+        <code>/etc/openalrc</code> or <code>$HOME/.openalrc</code> with
+        line
+
+        <pre>  ( define devices '(alsa) )</pre>
+      </dd>
+    </dl>
+  </dd>
+</dl>
+
+</div>
+
+  <div class="panel-footer">
+    <p><span class="page_copyright">Copyright <a href="http://michalis.ii.uni.wroc.pl/~michalis/">Michalis Kamburelis</a>.
+    Some images copyright <a href="http://cat-astrophe-games.com/">Cat-astrophe Games</a> and Paweł Wojciechowicz.
+    You can redistribute this on terms of the
+    <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</span>
+
+    <p><a href="https://sourceforge.net/projects/castle-engine">Hosted by SourceForge.net</a>.
+
+    <p>We use <a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>.
+    Like every other frickin' website on the Internet.
+    Blink twice if you understand.
+  </div>
+
+  
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins).
+     Used also by colorbox. -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/js/jquery.min.js" type="text/javascript"></script>
+<!-- Include colorbox after jQuery is known -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery('a.screenshot').colorbox({opacity: 0.9, rel:'screenshot', maxWidth:'90%', maxHeight:'90%'});
+</script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+

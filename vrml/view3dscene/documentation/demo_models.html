@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- meta suggested by bootstrap, but generally sensible -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Author" content="Michalis Kamburelis">
+
+
+
+  <title>Demo models | Castle Game Engine</title>
+
+
+<!-- Bootstrap -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Colorbox -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/example3/colorbox.css" type="text/css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml"
+  title="Castle Game Engine - News Feed"
+  href="https://castle-engine.sourceforge.io/news_feed.php">
+
+<link type="text/css" rel="stylesheet" media="all" href="https://castle-engine.sourceforge.io/castle-engine.css">
+
+
+<script type="text/javascript" src="https://castle-engine.sourceforge.io/castle-engine.js"></script>
+
+<style type="text/css">
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for delphi
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.delphi .de1, .delphi .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.delphi  {font-family:monospace;}
+.delphi .imp {font-weight: bold; color: red;}
+.delphi li, .delphi .li1 {font-weight: normal; vertical-align:top;}
+.delphi .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.delphi .li2 {font-weight: bold; vertical-align:top;}
+.delphi .kw1 {color: #000000; font-weight: bold;}
+.delphi .kw2 {color: #000000; font-weight: bold;}
+.delphi .kw3 {color: #000066;}
+.delphi .kw4 {color: #000066; font-weight: bold;}
+.delphi .co1 {color: #808080; font-style: italic;}
+.delphi .co2 {color: #008000; font-style: italic;}
+.delphi .coMULTI {color: #808080; font-style: italic;}
+.delphi .es0 {color: #ff0000; font-weight: bold;}
+.delphi .br0 {color: #000066;}
+.delphi .sy0 {color: #000066;}
+.delphi .sy1 {color: #000066;}
+.delphi .sy2 {color: #000066;}
+.delphi .sy3 {color: #000066;}
+.delphi .st0 {color: #ff0000;}
+.delphi .nu0 {color: #0000ff;}
+.delphi .me1 {color: #006600;}
+.delphi .re0 {color: #0000cc;}
+.delphi .re1 {color: #ff0000;}
+.delphi .ln-xtra, .delphi li.ln-xtra, .delphi div.ln-xtra {background-color: #ffc;}
+.delphi span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for vrmlx3d
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.vrmlx3d .de1, .vrmlx3d .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.vrmlx3d  {font-family:monospace;}
+.vrmlx3d .imp {font-weight: bold; color: red;}
+.vrmlx3d li, .vrmlx3d .li1 {font-weight: normal; vertical-align:top;}
+.vrmlx3d .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.vrmlx3d .li2 {font-weight: bold; vertical-align:top;}
+.vrmlx3d .kw1 {color: #000000; font-weight: bold;}
+.vrmlx3d .kw2 {color: #c20cb9; font-weight: bold;}
+.vrmlx3d .kw3 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .co0 {color: #666666; font-style: italic;}
+.vrmlx3d .co1 {color: #800000;}
+.vrmlx3d .co2 {color: #cc0000; font-style: italic;}
+.vrmlx3d .co3 {color: #000000; font-weight: bold;}
+.vrmlx3d .co4 {color: #666666;}
+.vrmlx3d .es1 {color: #000099; font-weight: bold;}
+.vrmlx3d .es2 {color: #007800;}
+.vrmlx3d .es3 {color: #007800;}
+.vrmlx3d .es4 {color: #007800;}
+.vrmlx3d .es5 {color: #780078;}
+.vrmlx3d .es_h {color: #000099; font-weight: bold;}
+.vrmlx3d .br0 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .sy0 {color: #000000; font-weight: bold;}
+.vrmlx3d .st0 {color: #ff0000;}
+.vrmlx3d .st_h {color: #ff0000;}
+.vrmlx3d .nu0 {color: #000000;}
+.vrmlx3d .re0 {color: #007800;}
+.vrmlx3d .re1 {color: #007800;}
+.vrmlx3d .re2 {color: #007800;}
+.vrmlx3d .re4 {color: #007800;}
+.vrmlx3d .re5 {color: #660033;}
+.vrmlx3d .ln-xtra, .vrmlx3d li.ln-xtra, .vrmlx3d div.ln-xtra {background-color: #ffc;}
+.vrmlx3d span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c .de1, .c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c  {font-family:monospace;}
+.c .imp {font-weight: bold; color: red;}
+.c li, .c .li1 {font-weight: normal; vertical-align:top;}
+.c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c .li2 {font-weight: bold; vertical-align:top;}
+.c .kw1 {color: #b1b100;}
+.c .kw2 {color: #000000; font-weight: bold;}
+.c .kw3 {color: #000066;}
+.c .kw4 {color: #993333;}
+.c .co1 {color: #666666; font-style: italic;}
+.c .co2 {color: #339933;}
+.c .coMULTI {color: #808080; font-style: italic;}
+.c .es0 {color: #000099; font-weight: bold;}
+.c .es1 {color: #000099; font-weight: bold;}
+.c .es2 {color: #660099; font-weight: bold;}
+.c .es3 {color: #660099; font-weight: bold;}
+.c .es4 {color: #660099; font-weight: bold;}
+.c .es5 {color: #006699; font-weight: bold;}
+.c .br0 {color: #009900;}
+.c .sy0 {color: #339933;}
+.c .st0 {color: #ff0000;}
+.c .nu0 {color: #0000dd;}
+.c .nu6 {color: #208080;}
+.c .nu8 {color: #208080;}
+.c .nu12 {color: #208080;}
+.c .nu16 {color:#800080;}
+.c .nu17 {color:#800080;}
+.c .nu18 {color:#800080;}
+.c .nu19 {color:#800080;}
+.c .me1 {color: #202020;}
+.c .me2 {color: #202020;}
+.c .ln-xtra, .c li.ln-xtra, .c div.ln-xtra {background-color: #ffc;}
+.c span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for xml
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.xml .de1, .xml .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.xml  {font-family:monospace;}
+.xml .imp {font-weight: bold; color: red;}
+.xml li, .xml .li1 {font-weight: normal; vertical-align:top;}
+.xml .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.xml .li2 {font-weight: bold; vertical-align:top;}
+.xml .es0 {color: #000099; font-weight: bold;}
+.xml .br0 {color: #66cc66;}
+.xml .sy0 {color: #66cc66;}
+.xml .st0 {color: #ff0000;}
+.xml .nu0 {color: #cc66cc;}
+.xml .sc-1 {color: #808080; font-style: italic;}
+.xml .sc0 {color: #00bbdd;}
+.xml .sc1 {color: #ddbb00;}
+.xml .sc2 {color: #339933;}
+.xml .sc3 {color: #009900;}
+.xml .re0 {color: #000066;}
+.xml .re1 {color: #000000; font-weight: bold;}
+.xml .re2 {color: #000000; font-weight: bold;}
+.xml .ln-xtra, .xml li.ln-xtra, .xml div.ln-xtra {background-color: #ffc;}
+.xml span.xtra { display:block; }
+</style>
+
+<script type="text/javascript">
+var _bftn_options = {
+//always_show_widget: true // @type {Boolean}
+};
+</script>
+<!-- script src="https://widget.battleforthenet.com/widget.js" async></script -->
+
+<script src="https://apis.google.com/js/platform.js" async defer></script></head>
+
+<body class="has-github-ribbon">
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Uncomment this for toggable navbar -->
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      -->
+
+      <ul class="nav nav-tabs navbar-right">
+        <li><a href="https://patreon.com/castleengine" class="navbar-link">Support the engine on<br><img class="patreon-logo" src="https://castle-engine.sourceforge.io/images/patreonlogoorange_45px.png" alt="Patreon" /></a></li>
+      </ul>
+
+      <!--button type="button" class="btn btn-default navbar-btn navbar-right" style="margin-right: 0px;"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height: 40px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></button-->
+
+      <!--p class="navbar-text navbar-right"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height:50px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></p-->
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          <img alt="" src="https://castle-engine.sourceforge.io/images/header_icon.png">
+        </a>
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          Castle Game Engine
+        </a>
+      </div>
+      
+      
+    <!-- Uncomment this for toggable navbar -->
+    <!--div class="collapse navbar-collapse" id="main-navbar-collapse-1" -->
+    <ul class="nav nav-tabs"><li class=""><a href="https://castle-engine.sourceforge.io/index.php">Download</a></li><li class=""><a href="https://castle-engine.sourceforge.io/wp/">News</a></li><li class=""><a href="https://castle-engine.sourceforge.io/features.php">Features</a></li><li class=" dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="https://castle-engine.sourceforge.io/documentation.php">Getting Started</a></li><li><a href="https://castle-engine.sourceforge.io/manual_intro.php">Manual</a></li><li><a href="https://castle-engine.sourceforge.io/creating_data_intro.php">Creating Game Data</a></li><li><a href="https://castle-engine.sourceforge.io/apidoc/html/index.html">API Reference</a></li><li><a href="http://castle-engine.io/modern_pascal_introduction.html">Modern Object Pascal Introduction</a></li><li><a href="https://castle-engine.sourceforge.io/documentation_more.php">More...</a></li></ul></li><li class=" active"><a href="vrml_x3d.html">Scene Graph (X3D)</a></li><li class=""><a href="view3dscene.html" title="VRML / X3D browser, and a viewer for other 3D model formats">view3dscene</a></li><li class=""><a href="https://castle-engine.sourceforge.io/talk.php" title="Ask for help, report bugs, discuss features">Talk with us</a></li><li class=""><a href="https://castle-engine.sourceforge.io/all_programs.php" title="All the games and tools using our 3D engine">Games and Tools</a></li>
+    </ul>
+    <!-- Uncomment this for toggable navbar -->
+    <!--/div-->
+    </div>
+
+    <a href="https://github.com/castle-engine/demo-models" class="github-ribbon"><img src="https://castle-engine.sourceforge.io/images/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+  </nav><div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-sm-push-3 content-near-sidebar">
+          <h1>Demo models <span class="label label-default version_number">3.9.0</span></h1><table class="thumbnails thumbnails-align-right"><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/rhan_shrine_5_everything.png"
+             class="screenshot"
+             title="Shinto shrine model, from http://opengameart.org/content/shrine-shinto-japan , with multiple shadow maps enabled"><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/rhan_shrine_5_everything.png"
+            alt="Shinto shrine model, from http://opengameart.org/content/shrine-shinto-japan , with multiple shadow maps enabled"
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/metallic_shiny.png"
+             class="screenshot"
+             title="Shiny dark metallic material under multiple lights, with per-pixel lighting."><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/metallic_shiny.png"
+            alt="Shiny dark metallic material under multiple lights, with per-pixel lighting."
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/volumetric_animated_fog_all.png"
+             class="screenshot"
+             title="Volumetric fog"><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/volumetric_animated_fog_all.png"
+            alt="Volumetric fog"
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/fancy_light_spot_shape.png"
+             class="screenshot"
+             title="Textured spot light with shadow"><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/fancy_light_spot_shape.png"
+            alt="Textured spot light with shadow"
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/castle_overburn.png"
+             class="screenshot"
+             title="Castle &quot;overburn&quot; simple effect."><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/castle_overburn.png"
+            alt="Castle &quot;overburn&quot; simple effect."
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/shadows_chopper_and_house.png"
+             class="screenshot"
+             title="Shadow volumes from chopper over a house scenery. Chopper can be moved, rotated, scaled by mouse."><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/shadows_chopper_and_house.png"
+            alt="Shadow volumes from chopper over a house scenery. Chopper can be moved, rotated, scaled by mouse."
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/fountain_shadows_0.png"
+             class="screenshot"
+             title="Fountain level model, with shadow volumes."><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/fountain_shadows_0.png"
+            alt="Fountain level model, with shadow volumes."
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/fountain_shadows_1.png"
+             class="screenshot"
+             title="The same fountain level model, with shadow volumes. After some interactive fun with moving/rotating stuff around :)"><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/fountain_shadows_1.png"
+            alt="The same fountain level model, with shadow volumes. After some interactive fun with moving/rotating stuff around :)"
+          /></a></td></tr></table>
+<div class="download jumbotron">
+    <!-- We use a div with min-width,
+         to make sure the text "Support on Patreon"
+         fits on the button. -->
+    <div style="display: block; min-width: 20em; text-align: center;">
+
+    <p><a href="https://castle-engine.sourceforge.io/demo_models.php" class="btn btn-primary btn-lg">Download demo models from our WWW page</a></p>
+    </div>
+</div>
+
+<p>Documentation:
+
+<div class="table_of_contents"><ol>
+<li><a href="#section_about">About</a>
+</li>
+<li><a href="#section_development">Development</a>
+</li>
+<li><a href="#section_authors">Authors</a>
+</li>
+</ol>
+</div>
+<h2 id="section_about">1. About</h2>
+
+<p>This is our collection of demo 3D models.
+Some are impressive 3D models, some (most) are simple models demonstrating some
+technical feature.
+Most of the models are in X3D and VRML formats,
+but in general various formats handled by
+ <a href="view3dscene.html">view3dscene</a> and
+ <a href="https://castle-engine.sourceforge.io/index.php">Castle Game Engine</a> are used.
+At the beginning of most files (remember that you can open X3D files
+in normal text editor too) you can find
+comments explaining what this file demonstrates.
+
+<p>These models were created to test
+<a href="https://castle-engine.sourceforge.io/index.php">our Castle Game Engine</a>,
+but many of them should also be handled by other conforming
+X3D and VRML browsers.</p>
+
+<p>Files inside <code>warnings/</code> subdirectories are deliberately invalid
+in some ways. Good X3D browser should display a sensible warning
+message and (when possible) continue (omitting only the problematic part).</p>
+
+<h2 id="section_development">2. Development</h2>
+
+<p>Comments and contributions to these demos are most welcome.
+See <a href="https://castle-engine.sourceforge.io/forum.php">forum</a> for ways to contact us.
+If you have a cool 3D model, something interesting,
+or maybe just something difficult for our engine, please share it with us!
+<!--Posting a screenshot or a video of your model is most welcome.-->
+We love to see how you use our tools :)
+<!--
+To include your model in these demos, or to report a bug, you will of course
+have to actually send your 3D model source.--></p>
+
+<p>Feel free to expand, modify, redistribute these test files
+&mdash; they are covered by GNU GPL &gt;= 2 license.</p>
+
+<p>You can always download the very current version of these models from <a href="https://github.com/castle-engine/demo-models">our GitHub project</a>, like this:
+
+<pre>git clone https://github.com/castle-engine/demo-models.git</pre>
+
+<p>Or you can get them from SVN  (auto-synchronized with GIT) by:</p>
+
+<pre>svn checkout http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models</pre>
+
+<h2 id="section_authors">3. Authors</h2>
+
+<p>Most of the 3D models here were created by Kambi (Michalis Kamburelis).
+Simple test models were simply manually crafted in a text editor.
+The more complicated meshes were created in
+<a href="http://www.blender3d.org/">Blender</a> (see
+our <a href="https://castle-engine.sourceforge.io/creating_data_blender.php">Blender exporting documentation</a>),
+you will find the .blend source files inside.
+For 2D art I usually use <a href="http://www.gimp.org/">GIMP</a>.
+Skies generated with <a href="http://www.planetside.co.uk/">Terragen</a>.</p>
+
+<p>Large/important contributions:</p>
+
+<ul>
+  <li><p><i>Victor Amat</i> provided a lot of interesting demos.
+    To mention some:
+    flat mirrors by <code>RenderedTexture</code> (see <code>x3d/rendered_texture/</code>),
+    Screen Space Ambient Occlusion (see <code>shadow_maps/ssao*</code>),
+    shadow maps tests (including demo to visualize bias/scale,
+    <code>shadow_maps/shadow_bias.x3dv</code>),
+    <code>vrml_2/camera_{orient,rot}.wrl</code>,
+    <code>orientation_interpolator_alum_box.wrl</code>,
+    test textures for spherical mapping testing (<code>textures/spheremap-*.jpg</code>).
+    Thousand thanks!</p></li>
+
+  <li><p><i>Stephen H. France</i> provided various tests for <code>TimeSensor</code>,
+    <code>Extrusion</code> and others. Thanks!</p></li>
+
+  <li><p>Various models were based on
+    <a href="http://opengameart.org/">OpenGameArt.org</a> models,
+    also some textures were taken from there. This is a great site
+    where you can find models and textures on clear open-source licenses
+    (GPL or CC), thousand thanks go to it's many contributors.
+
+    <p>Examples include
+    <a href="http://opengameart.org/content/shrine-shinto-japan">Shinto Shrine</a>
+    (used for compositing shaders demo inside <code>compositing_shaders/shinto_shrine/</code>).
+    Also a lot of textures, see <code>compositing_shaders/textures/AUTHORS.txt</code>.</p>
+  </li>
+
+  <li><p><i>Orin Palmer</i> created plane model in 3DS, see <code>3ds/p47d.3ds</code>
+    and <code>3ds/p47d.txt</code>.</p></li>
+
+  <li><p>Many textures inside <code>textures/castle/</code>
+    are from <a href="http://www.wolfiesden.com/golgotha/golgotha.asp">public domain textures from unfinished game "Golgotha"</a><!-- (previously on http://www.jonathanclark.com/, but host seems dead now)-->
+    </p></li>
+
+  <li>lion bump mapping textures from
+    <a href="http://www-static.cc.gatech.edu/grads/d/davidp/parallax_mapping/">Philippe
+    David steep parallax mapping code</a>, based on <a href="http://graphics.cs.brown.edu/games/SteepParallax/index.html">paper
+    about steep mapping</a>.
+
+  <li><p>See also <code>AUTHORS.txt</code> files inside the archive for detailed
+    and complete listing of authors and sources.</p></li>
+</ul>
+
+<p>Thanks to everyone!</p>
+
+</div><div class="col-sm-3 col-sm-pull-9 well sidebar">
+  <div class="sidebar">
+    <div class="sidebar_title"><a href="vrml_x3d.html">Scene Graph (X3D)</a></div><ul><li>Demo models</li><li><a href="x3d_implementation_status.html">Standard X3D Components</a><ul><li><a href="x3d_implementation_core.html">Core</a></li><li><a href="x3d_implementation_time.html">Time</a></li><li><a href="x3d_implementation_networking.html">Networking</a></li><li><a href="x3d_implementation_grouping.html">Grouping</a></li><li><a href="x3d_implementation_rendering.html">Rendering</a></li><li><a href="x3d_implementation_shape.html">Shape</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_shape_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_geometry3d.html">Geometry3D</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_geometry3d_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_geometry2d.html">Geometry2D</a></li><li><a href="x3d_implementation_text.html">Text</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_text_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_sound.html">Sound</a></li><li><a href="x3d_implementation_lighting.html">Lighting</a></li><li><a href="x3d_implementation_texturing.html">Texturing</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_texturing_extensions.php">Extensions</a></li><li><a href="https://castle-engine.sourceforge.io/x3d_multi_texturing.php">X3D MultiTexturing problems and proposed solutions</a></li></ul></li><li><a href="x3d_implementation_interpolation.html">Interpolation</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_interpolation_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_pointingdevicesensor.html">Pointing device sensor</a></li><li><a href="x3d_implementation_keydevicesensor.html">Key device sensor</a></li><li><a href="x3d_implementation_environmentalsensor.html">Environmental sensor</a></li><li><a href="x3d_implementation_navigation.html">Navigation</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_navigation_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_environmentaleffects.html">Environmental effects</a></li><li><a href="x3d_implementation_hanim.html">H-Anim</a></li><li><a href="x3d_implementation_nurbs.html">NURBS</a><ul><li><a href="x3d_implementation_nurbs.html#section_homogeneous_coordinates">Control points are in homogeneous coordinates</a></li></ul></li><li><a href="x3d_implementation_scripting.html">Scripting</a></li><li><a href="x3d_implementation_eventutilities.html">Event utilities</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_eventutilities_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_shaders.html">Programmable shaders</a></li><li><a href="x3d_implementation_cadgeometry.html">CAD geometry</a></li><li><a href="x3d_implementation_texturing3d.html">Texturing3D</a></li><li><a href="x3d_implementation_cubemaptexturing.html">Cube map environmental texturing</a></li></ul></li><li><a href="https://castle-engine.sourceforge.io/x3d_larger_extensions.php">Larger X3D Extensions</a><ul><li><a href="compositing_shaders.html">Compositing Shaders</a></li><li><a href="x3d_extensions_screen_effects.html">Screen Effects</a></li><li><a href="x3d_extensions_shadow_maps.html">Shadow Maps</a></li><li><a href="https://castle-engine.sourceforge.io/x3d_extensions_shadow_volumes.php">Shadow Volumes</a></li><li><a href="x3d_extensions_vrml1.html">(Old) VRML 1.0</a></li></ul></li><li><a href="x3d_extensions.html">Complete list of X3D Extensions</a></li><li><a href="castle_script.html">CastleScript language reference</a></li><li><a href="castle_animation_frames.html">Castle Animation Frames (castle-anim-frames) file format</a></li><li><a href="x3d_time_origin_considered_uncomfortable.html">VRML / X3D time origin considered uncomfortable</a></li><li><a href="nist_vrml_test_suite.html">NIST conformace test suite</a></li></ul></div></div></div></div>
+
+  <div class="panel-footer">
+    <p><span class="page_copyright">Copyright <a href="http://michalis.ii.uni.wroc.pl/~michalis/">Michalis Kamburelis</a>.
+    Some images copyright <a href="http://cat-astrophe-games.com/">Cat-astrophe Games</a> and Paweł Wojciechowicz.
+    You can redistribute this on terms of the
+    <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</span>
+
+    <p><a href="https://sourceforge.net/projects/castle-engine">Hosted by SourceForge.net</a>.
+
+    <p>We use <a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>.
+    Like every other frickin' website on the Internet.
+    Blink twice if you understand.
+  </div>
+
+  
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins).
+     Used also by colorbox. -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/js/jquery.min.js" type="text/javascript"></script>
+<!-- Include colorbox after jQuery is known -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery('a.screenshot').colorbox({opacity: 0.9, rel:'screenshot', maxWidth:'90%', maxHeight:'90%'});
+</script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+

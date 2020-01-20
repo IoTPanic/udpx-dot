@@ -15,6 +15,8 @@ The UDPX ESP32 PCB allows anyone to use the UDPX project without any hassle. It 
 * SD-card for firmware update without requiring a IDE installation as well as pre-defined patterens.
 * Header for a external serial connection such as RS-485.
 
+# Pin Usage
+
 # Sister Repositories
 
 * UDPX ESP32 Firmware @martinfasani - https://github.com/martinberlin/udpx

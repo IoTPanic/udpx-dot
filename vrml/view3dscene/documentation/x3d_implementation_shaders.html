@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- meta suggested by bootstrap, but generally sensible -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Author" content="Michalis Kamburelis">
+
+
+
+  <title>Programmable shaders component | Castle Game Engine</title>
+
+
+<!-- Bootstrap -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Colorbox -->
+<link href="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/example3/colorbox.css" type="text/css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml"
+  title="Castle Game Engine - News Feed"
+  href="https://castle-engine.sourceforge.io/news_feed.php">
+
+<link type="text/css" rel="stylesheet" media="all" href="https://castle-engine.sourceforge.io/castle-engine.css">
+
+
+<script type="text/javascript" src="https://castle-engine.sourceforge.io/castle-engine.js"></script>
+
+<style type="text/css">
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for delphi
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.delphi .de1, .delphi .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.delphi  {font-family:monospace;}
+.delphi .imp {font-weight: bold; color: red;}
+.delphi li, .delphi .li1 {font-weight: normal; vertical-align:top;}
+.delphi .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.delphi .li2 {font-weight: bold; vertical-align:top;}
+.delphi .kw1 {color: #000000; font-weight: bold;}
+.delphi .kw2 {color: #000000; font-weight: bold;}
+.delphi .kw3 {color: #000066;}
+.delphi .kw4 {color: #000066; font-weight: bold;}
+.delphi .co1 {color: #808080; font-style: italic;}
+.delphi .co2 {color: #008000; font-style: italic;}
+.delphi .coMULTI {color: #808080; font-style: italic;}
+.delphi .es0 {color: #ff0000; font-weight: bold;}
+.delphi .br0 {color: #000066;}
+.delphi .sy0 {color: #000066;}
+.delphi .sy1 {color: #000066;}
+.delphi .sy2 {color: #000066;}
+.delphi .sy3 {color: #000066;}
+.delphi .st0 {color: #ff0000;}
+.delphi .nu0 {color: #0000ff;}
+.delphi .me1 {color: #006600;}
+.delphi .re0 {color: #0000cc;}
+.delphi .re1 {color: #ff0000;}
+.delphi .ln-xtra, .delphi li.ln-xtra, .delphi div.ln-xtra {background-color: #ffc;}
+.delphi span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for vrmlx3d
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.vrmlx3d .de1, .vrmlx3d .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.vrmlx3d  {font-family:monospace;}
+.vrmlx3d .imp {font-weight: bold; color: red;}
+.vrmlx3d li, .vrmlx3d .li1 {font-weight: normal; vertical-align:top;}
+.vrmlx3d .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.vrmlx3d .li2 {font-weight: bold; vertical-align:top;}
+.vrmlx3d .kw1 {color: #000000; font-weight: bold;}
+.vrmlx3d .kw2 {color: #c20cb9; font-weight: bold;}
+.vrmlx3d .kw3 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .co0 {color: #666666; font-style: italic;}
+.vrmlx3d .co1 {color: #800000;}
+.vrmlx3d .co2 {color: #cc0000; font-style: italic;}
+.vrmlx3d .co3 {color: #000000; font-weight: bold;}
+.vrmlx3d .co4 {color: #666666;}
+.vrmlx3d .es1 {color: #000099; font-weight: bold;}
+.vrmlx3d .es2 {color: #007800;}
+.vrmlx3d .es3 {color: #007800;}
+.vrmlx3d .es4 {color: #007800;}
+.vrmlx3d .es5 {color: #780078;}
+.vrmlx3d .es_h {color: #000099; font-weight: bold;}
+.vrmlx3d .br0 {color: #7a0874; font-weight: bold;}
+.vrmlx3d .sy0 {color: #000000; font-weight: bold;}
+.vrmlx3d .st0 {color: #ff0000;}
+.vrmlx3d .st_h {color: #ff0000;}
+.vrmlx3d .nu0 {color: #000000;}
+.vrmlx3d .re0 {color: #007800;}
+.vrmlx3d .re1 {color: #007800;}
+.vrmlx3d .re2 {color: #007800;}
+.vrmlx3d .re4 {color: #007800;}
+.vrmlx3d .re5 {color: #660033;}
+.vrmlx3d .ln-xtra, .vrmlx3d li.ln-xtra, .vrmlx3d div.ln-xtra {background-color: #ffc;}
+.vrmlx3d span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c .de1, .c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c  {font-family:monospace;}
+.c .imp {font-weight: bold; color: red;}
+.c li, .c .li1 {font-weight: normal; vertical-align:top;}
+.c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c .li2 {font-weight: bold; vertical-align:top;}
+.c .kw1 {color: #b1b100;}
+.c .kw2 {color: #000000; font-weight: bold;}
+.c .kw3 {color: #000066;}
+.c .kw4 {color: #993333;}
+.c .co1 {color: #666666; font-style: italic;}
+.c .co2 {color: #339933;}
+.c .coMULTI {color: #808080; font-style: italic;}
+.c .es0 {color: #000099; font-weight: bold;}
+.c .es1 {color: #000099; font-weight: bold;}
+.c .es2 {color: #660099; font-weight: bold;}
+.c .es3 {color: #660099; font-weight: bold;}
+.c .es4 {color: #660099; font-weight: bold;}
+.c .es5 {color: #006699; font-weight: bold;}
+.c .br0 {color: #009900;}
+.c .sy0 {color: #339933;}
+.c .st0 {color: #ff0000;}
+.c .nu0 {color: #0000dd;}
+.c .nu6 {color: #208080;}
+.c .nu8 {color: #208080;}
+.c .nu12 {color: #208080;}
+.c .nu16 {color:#800080;}
+.c .nu17 {color:#800080;}
+.c .nu18 {color:#800080;}
+.c .nu19 {color:#800080;}
+.c .me1 {color: #202020;}
+.c .me2 {color: #202020;}
+.c .ln-xtra, .c li.ln-xtra, .c div.ln-xtra {background-color: #ffc;}
+.c span.xtra { display:block; }
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for xml
+ * CSS class: , CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.xml .de1, .xml .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.xml  {font-family:monospace;}
+.xml .imp {font-weight: bold; color: red;}
+.xml li, .xml .li1 {font-weight: normal; vertical-align:top;}
+.xml .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.xml .li2 {font-weight: bold; vertical-align:top;}
+.xml .es0 {color: #000099; font-weight: bold;}
+.xml .br0 {color: #66cc66;}
+.xml .sy0 {color: #66cc66;}
+.xml .st0 {color: #ff0000;}
+.xml .nu0 {color: #cc66cc;}
+.xml .sc-1 {color: #808080; font-style: italic;}
+.xml .sc0 {color: #00bbdd;}
+.xml .sc1 {color: #ddbb00;}
+.xml .sc2 {color: #339933;}
+.xml .sc3 {color: #009900;}
+.xml .re0 {color: #000066;}
+.xml .re1 {color: #000000; font-weight: bold;}
+.xml .re2 {color: #000000; font-weight: bold;}
+.xml .ln-xtra, .xml li.ln-xtra, .xml div.ln-xtra {background-color: #ffc;}
+.xml span.xtra { display:block; }
+</style>
+
+<script type="text/javascript">
+var _bftn_options = {
+//always_show_widget: true // @type {Boolean}
+};
+</script>
+<!-- script src="https://widget.battleforthenet.com/widget.js" async></script -->
+
+<script src="https://apis.google.com/js/platform.js" async defer></script></head>
+
+<body >
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Uncomment this for toggable navbar -->
+      <!--
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      -->
+
+      <ul class="nav nav-tabs navbar-right">
+        <li><a href="https://patreon.com/castleengine" class="navbar-link">Support the engine on<br><img class="patreon-logo" src="https://castle-engine.sourceforge.io/images/patreonlogoorange_45px.png" alt="Patreon" /></a></li>
+      </ul>
+
+      <!--button type="button" class="btn btn-default navbar-btn navbar-right" style="margin-right: 0px;"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height: 40px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></button-->
+
+      <!--p class="navbar-text navbar-right"><a href="https://patreon.com/castleengine" class="navbar-link">Support us on<br><img style="height:50px" src="https://castle-engine.sourceforge.io/images/patreonlogoorange.png" alt="Patreon" /></a></p-->
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          <img alt="" src="https://castle-engine.sourceforge.io/images/header_icon.png">
+        </a>
+        <a class="navbar-brand" href="https://castle-engine.sourceforge.io/index.php">
+          Castle Game Engine
+        </a>
+      </div>
+      
+      
+    <!-- Uncomment this for toggable navbar -->
+    <!--div class="collapse navbar-collapse" id="main-navbar-collapse-1" -->
+    <ul class="nav nav-tabs"><li class=""><a href="https://castle-engine.sourceforge.io/index.php">Download</a></li><li class=""><a href="https://castle-engine.sourceforge.io/wp/">News</a></li><li class=""><a href="https://castle-engine.sourceforge.io/features.php">Features</a></li><li class=" dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documentation <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="https://castle-engine.sourceforge.io/documentation.php">Getting Started</a></li><li><a href="https://castle-engine.sourceforge.io/manual_intro.php">Manual</a></li><li><a href="https://castle-engine.sourceforge.io/creating_data_intro.php">Creating Game Data</a></li><li><a href="https://castle-engine.sourceforge.io/apidoc/html/index.html">API Reference</a></li><li><a href="http://castle-engine.io/modern_pascal_introduction.html">Modern Object Pascal Introduction</a></li><li><a href="https://castle-engine.sourceforge.io/documentation_more.php">More...</a></li></ul></li><li class=" active"><a href="vrml_x3d.html">Scene Graph (X3D)</a></li><li class=""><a href="view3dscene.html" title="VRML / X3D browser, and a viewer for other 3D model formats">view3dscene</a></li><li class=""><a href="https://castle-engine.sourceforge.io/talk.php" title="Ask for help, report bugs, discuss features">Talk with us</a></li><li class=""><a href="https://castle-engine.sourceforge.io/all_programs.php" title="All the games and tools using our 3D engine">Games and Tools</a></li>
+    </ul>
+    <!-- Uncomment this for toggable navbar -->
+    <!--/div-->
+    </div>
+
+    
+  </nav><div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-9 col-sm-push-3 content-near-sidebar">
+          <div class="header_breadcrumbs"><a href="https://castle-engine.sourceforge.io/index.php">Home</a> &#187; <a href="vrml_x3d.html">Scene Graph (X3D)</a> &#187; <a href="x3d_implementation_status.html">Standard X3D Components</a></div><h1>Programmable shaders component</h1><div class="x3d_component_intro">
+    <p class="paragraph_first">This component defines nodes for using high-level shading languages
+     available on modern graphic cards.</p>
+    <p class="paragraph_last">See also <a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html">X3D specification of the Programmable shaders component</a>.</p></div><table class="thumbnails thumbnails-align-right"><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/glsl_teapot_demo.png"
+             class="screenshot"
+             title="Teapot X3D model rendered with toon shading in GLSL"><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/glsl_teapot_demo.png"
+            alt="Teapot X3D model rendered with toon shading in GLSL"
+          /></a></td></tr><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/glsl_flutter.png"
+             class="screenshot"
+             title="GLSL demo &quot;flutter&quot; (from FreeWRL examples)"><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/glsl_flutter.png"
+            alt="GLSL demo &quot;flutter&quot; (from FreeWRL examples)"
+          /></a></td></tr><tr><td><div class="thumbs_cell_with_text_or_movie">This movie shows GLSL shaders by our engine.<iframe width="200" height="167" src="https://www.youtube.com/embed/fG1owuqwcmc" frameborder="0" allowfullscreen></iframe></div></td></tr></table>
+<p>Contents:
+<div class="table_of_contents"><ol>
+<li><a href="#section_demos">Demos</a>
+</li>
+<li><a href="#section_support">Support</a>
+</li>
+<li><a href="#section_examples">Features and examples</a>
+<ol>
+<li><a href="#section_basic">Basic example</a>
+</li>
+<li><a href="#section_inline">Inline shader source code</a>
+</li>
+<li><a href="#section_uniforms">Passing values to GLSL shader uniform variables</a>
+</li>
+<li><a href="#section_uniforms_tex">Passing textures to GLSL shader uniform variables</a>
+</li>
+<li><a href="#section_attributes">Passing attributes to GLSL shader</a>
+</li>
+<li><a href="#section_geometry">Geometry shaders</a>
+<ol>
+<li><a href="#section_geometry_old">Geometry shaders before GLSL 1.50 not supported</a>
+</li>
+<li><a href="#section_geometry_input_size">Macro CASTLE_GEOMETRY_INPUT_SIZE</a>
+</li>
+</ol>
+</li>
+<li><a href="#section_log_shaders">Inspecting and customizing shaders generated by the engine</a>
+</li>
+<li><a href="#section_todos">TODOs</a>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 id="section_demos">1. Demos</h2>
+
+<p>For complete demos of features discussed here,
+see the <code>shaders</code> subdirectory inside <a href="demo_models.html">our VRML/X3D demo models</a>.
+You can open them with various <i>Castle Game Engine</i> X3D tools,
+in particular with <a href="view3dscene.html">view3dscene</a>.
+
+</p>
+
+<h2 id="section_support">2. Support</h2>
+
+<p><code><a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#ComposedShader">ComposedShader</a></code><small><a href="https://castle-engine.sourceforge.io/apidoc/html/X3DNodes.TComposedShaderNode.html"> (API reference)</a></small> and
+<code><a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#ShaderPart">ShaderPart</a></code><small><a href="https://castle-engine.sourceforge.io/apidoc/html/X3DNodes.TShaderPartNode.html"> (API reference)</a></small> nodes
+allow you to write shaders in the <i>OpenGL shading language (GLSL)</i>.
+These are standard X3D nodes to replace the default browser rendering with shaders.
+To learn GLSL, see:
+
+<ul>
+  <li><a href="https://www.opengl.org/sdk/docs/man4/">The GLSL function reference</a>.
+    Be careful: the reference linked here describes both GLSL and OpenGL API.
+    You can ignore the functions named <code>glXxx</code>,
+    they are part of the OpenGL API,
+    and they not useful to a shader author.
+  <li><a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">GLSL description at Wikipedia</a> and
+    <a href="https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language">GLSL description at Khronos wiki</a>.
+</ul>
+
+<p>If you're interested in shaders, we strongly encourage you to
+try also <a href="compositing_shaders.html">our compositing shaders extensions for X3D, with <code>Effect</code> and related nodes</a>. They allow to write shader code that can cooperate
+with standard browser rendering, and define rendering effects that can be
+easily reused and combined.
+
+<h2 id="section_examples">3. Features and examples</h2>
+
+<h3 id="section_basic">3.1. Basic example</h3>
+
+<p>Examples below are in the classic (VRML) encoding.
+To use shaders add inside the <code>Appearance</code> node code like</p>
+
+<pre class="vrmlx3d">shaders ComposedShader <span class="br0">&#123;</span>
+  language <span class="st0">&quot;GLSL&quot;</span>
+  parts <span class="br0">&#91;</span>
+    ShaderPart <span class="br0">&#123;</span> type <span class="st0">&quot;VERTEX&quot;</span>   url <span class="st0">&quot;my_shader.vs&quot;</span> <span class="br0">&#125;</span>
+    ShaderPart <span class="br0">&#123;</span> type <span class="st0">&quot;FRAGMENT&quot;</span> url <span class="st0">&quot;my_shader.fs&quot;</span> <span class="br0">&#125;</span>
+  <span class="br0">&#93;</span>
+<span class="br0">&#125;</span></pre>
+<p>The simplest <i>vertex shader code</i> to place inside <code>my_shader.vs</code> file
+would be:
+
+<pre class="c"><span class="kw4">void</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  gl_Position <span class="sy0">=</span> ftransform<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre>
+<p>The simplest <i>fragment shader code</i> to place inside <code>my_shader.fs</code> file
+would be:
+
+<pre class="c"><span class="kw4">void</span> main<span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  gl_FragColor <span class="sy0">=</span> vec4<span class="br0">&#40;</span><span class="nu16">1.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">0.0</span><span class="sy0">,</span> <span class="nu16">1.0</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="coMULTI">/* red */</span>
+<span class="br0">&#125;</span></pre>
+<h3 id="section_inline">3.2. Inline shader source code</h3>
+
+<p>You can directly write the shader source code inside an URL field
+(instead of putting it in an external file).
+The best way to do this, following the standards, is to use
+the <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">data URI</a>.
+In the simplest case, just start the URL with "<code>data:text/plain,</code>"
+and then write your shader code.</p>
+
+<p>A simplest example:</p>
+
+<pre class="vrmlx3d">shaders ComposedShader <span class="br0">&#123;</span>
+  language <span class="st0">&quot;GLSL&quot;</span>
+  parts <span class="br0">&#91;</span>
+    ShaderPart <span class="br0">&#123;</span> type <span class="st0">&quot;VERTEX&quot;</span>
+      url <span class="st0">&quot;data:text/plain,
+      void main(void)
+      {
+        gl_Position = ftransform();
+      }&quot;</span> <span class="br0">&#125;</span>
+&nbsp;
+    ShaderPart <span class="br0">&#123;</span> type <span class="st0">&quot;FRAGMENT&quot;</span>
+      url <span class="st0">&quot;data:text/plain,
+      void main(void)
+      {
+        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0); /* red */
+      }&quot;</span> <span class="br0">&#125;</span>
+  <span class="br0">&#93;</span>
+<span class="br0">&#125;</span></pre>
+<p><a href="http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models/shaders/shaders_inlined.x3dv">Another example: shaders_inlined.x3dv</a>.</p>
+
+<p>In case of the X3D XML encoding, you can also place
+shader source code inside the CDATA.</p>
+
+<p>As an extension (but compatible at least with
+<a href="http://instant-reality.com/">InstantPlayer</a>)
+we also recognize URL as containing direct shader source if it
+has any newlines and doesn't start with any URL protocol.
+But it's better to use "<code>data:text/plain,</code>" mentioned above.
+
+<h3 id="section_uniforms">3.3. Passing values to GLSL shader uniform variables</h3>
+
+<p>You can set uniform variables for your shaders from VRML/X3D,
+just add lines like</p>
+
+<pre class="vrmlx3d"><span class="kw2">inputOutput</span> SFVec3f UniformVariableName <span class="nu0">1</span> <span class="nu0">0</span> <span class="nu0">0</span></pre>
+<p>to your ComposedShader node. These uniforms may also be modified by
+events (when they are <code>inputOutput</code> or <code>inputOnly</code>),
+for example here's a simple way to pass the current time (in seconds)
+to your shader:
+
+<pre class="vrmlx3d"><span class="co0"># somewhere within Appearance:</span>
+shaders <span class="kw1">DEF</span> MyShader ComposedShader <span class="br0">&#123;</span>
+  language <span class="st0">&quot;GLSL&quot;</span>
+  parts <span class="br0">&#91;</span>
+    ShaderPart <span class="br0">&#123;</span> type <span class="st0">&quot;VERTEX&quot;</span> url <span class="st0">&quot;my_shader.vs&quot;</span> <span class="br0">&#125;</span>
+    ShaderPart <span class="br0">&#123;</span> type <span class="st0">&quot;FRAGMENT&quot;</span> url <span class="st0">&quot;my_shader.fs&quot;</span> <span class="br0">&#125;</span>
+  <span class="br0">&#93;</span>
+  <span class="kw2">inputOnly</span> SFTime time
+<span class="br0">&#125;</span>
+&nbsp;
+<span class="co0"># somewhere within grouping node (e.g. at the top-level of VRML/X3D file) add:</span>
+<span class="kw1">DEF</span> MyProximitySensor ProximitySensor <span class="br0">&#123;</span> size <span class="nu0">10000000</span> <span class="nu0">10000000</span> <span class="nu0">10000000</span> <span class="br0">&#125;</span>
+<span class="kw1">DEF</span> MyTimer TimeSensor <span class="br0">&#123;</span> loop <span class="kw1">TRUE</span> <span class="br0">&#125;</span>
+<span class="kw1">ROUTE</span> MyProximitySensor.enterTime <span class="kw1">TO</span> MyTimer.startTime
+<span class="kw1">ROUTE</span> MyTimer.elapsedTime <span class="kw1">TO</span> MyShader.time</pre>
+<p>The <code>ProximitySensor</code> node above is useful to make
+time start ticking from zero when you open VRML/X3D, which makes the float
+values in <code>MyTimer.elapsedTime</code> increase from zero.
+Which is usually useful, and avoids having precision problems
+with huge values of <code>MyTimer.time</code>. See <a href="x3d_time_origin_considered_uncomfortable.html">notes
+about VRML / X3D time origin</a> for more details.
+
+<p>Most field types may be passed to appropriate GLSL uniform
+values. You can even set GLSL vectors and matrices.
+You can use VRML/X3D multiple-value fields to set
+GLSL array types.
+We support all mappings between VRML/X3D and GLSL types
+for uniform values (that are mentioned in X3D spec).
+<i>TODO: except the (rather obscure) <code>SFImage</code> and <code>MFImage</code>
+types, that cannot be mapped to GLSL now.</i>
+</p>
+
+<h3 id="section_uniforms_tex">3.4. Passing textures to GLSL shader uniform variables</h3>
+
+<p>You can also specify texture node (as <code>SFNode</code> field, or an array
+of textures in <code>MFNode</code> field) as a uniform field value.
+Engine will load and bind the texture and pass to GLSL uniform variable
+bound texture unit. This means that you can pass in a natural way
+texture node to a GLSL <code>sampler2D</code>, <code>sampler3D</code>,
+<code>samplerCube</code>, <code>sampler2DShadow</code> and such.</p>
+
+<p>The simplest demo of using this too combine 2 textures in a shader is
+inside <a href="https://github.com/castle-engine/demo-models/blob/master/shaders/two_textures.x3dv">demo-models/shaders/two_textures.x3dv</a>.
+This demo, along with many more, are inside our
+ <a href="demo_models.html">our VRML/X3D demo models</a> (look inside the <code>shaders/</code> subdirectory).
+</p>
+
+<p>When using GLSL shaders in X3D you should pass all
+needed textures to them this way. Normal <code>appearance.texture</code>
+is ignored when using shaders. However, in our engine,
+we have a special case to allow you to specify textures also
+in traditional <code>appearance.texture</code> field: namely,
+when <code>ComposedShader</code> doesn't contain any texture nodes,
+we will still bind <code>appearance.texture</code>. This e.g. allows
+you to omit declaring texture nodes in <code>ComposedShader</code>
+field if you only have one texture, it also allows renderer to
+reuse OpenGL shader objects more (as you will be able to DEF/USE
+in X3D <code>ComposedShader</code> nodes even when they use different
+textures). But this feature should
+not be used or depended upon in the long run.</p>
+
+<p>Note that for now you have to pass textures in VRML/X3D fields
+(<code>initializeOnly</code> or <code>inputOutput</code>).
+TODO: Using <code>inputOnly</code> event to pass texture node to GLSL shader
+temporarily does not work, just use <code>initializeOnly</code> or <code>inputOutput</code> instead.</p>
+
+<h3 id="section_attributes">3.5. Passing attributes to GLSL shader</h3>
+
+<p>You can also pass per-vertex attributes to your shader.
+You can pass floats, vectors and matrices.
+The way do use this of course follows X3D specification,
+see <code><a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#FloatVertexAttribute">FloatVertexAttribute</a></code><small><a href="https://castle-engine.sourceforge.io/apidoc/html/X3DNodes.TFloatVertexAttributeNode.html"> (API reference)</a></small>,
+<code><a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#Matrix3VertexAttribute">Matrix3VertexAttribute</a></code><small><a href="https://castle-engine.sourceforge.io/apidoc/html/X3DNodes.TMatrix3VertexAttributeNode.html"> (API reference)</a></small>,
+<code><a href="http://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html#Matrix4VertexAttribute">Matrix4VertexAttribute</a></code><small><a href="https://castle-engine.sourceforge.io/apidoc/html/X3DNodes.TMatrix4VertexAttributeNode.html"> (API reference)</a></small> nodes.
+You can place them in the <code>attrib</code> field of most geometry nodes
+(like <code>IndexedFaceSet</code>).</p>
+
+<p><a href="http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models/shaders/attributes.x3dv">Example attributes.x3dv</a>,
+showing how to pass elevation grid heights by the shader attributes.</p>
+
+<h3 id="section_geometry">3.6. Geometry shaders</h3>
+
+<table class="thumbnails thumbnails-align-right"><tr><td>
+          <a href="https://castle-engine.sourceforge.io/images/original_size/geometry_shader_fun_smoothing.png"
+             class="screenshot"
+             title="Geometry shaders fun smoothing demo"><img
+            style="float: right"
+            src="https://castle-engine.sourceforge.io/images/thumb_size/geometry_shader_fun_smoothing.png"
+            alt="Geometry shaders fun smoothing demo"
+          /></a></td></tr></table>
+<p>We support <i>geometry shaders</i>
+(in addition to standard <i>vertex</i> and <i>fragment shaders</i>).
+To use them, simply set <code>ShaderPart.type</code> to <code>"GEOMETRY"</code>,
+and put code of your geometry shader inside <code>ShaderPart.url</code>.</p>
+
+<p><b>What is a geometry shader?</b>
+A geometry shader is executed once for each primitive, like once for each triangle.
+Geometry shader works <i>between</i> the vertex shader and fragment shader
+&mdash; it knows all the outputs from the vertex shader,
+and is responsible for passing them to the rasterizer.
+<!--
+and it generates inputs to the fragment shader.
+(More precisely, geometry shader generates inputs for the rasterizer,
+and the interpolated values will be given to the fragment shader.)
+-->
+Geometry shader uses the information about given primitive: vertex positions
+from vertex shader, usually in eye or object space,
+and all vertex attributes.
+A single geometry shader may generate any number of primitives
+(separated by the <code>EndPrimitive</code> call), so you can easily "explode"
+a simple input primitive into a number of others.
+You can also delete some original primitives based on some criteria.
+The type of the primitive may be changed by the geometry shader
+&mdash; for example, triangles may be converted to points or the other way around.</p>
+
+<p>Examples of geometry shaders with <code>ComposedShader</code>:</p>
+
+<ul>
+  <li><a href="http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models/shaders/geometry_shader.x3dv">Download
+    a basic example X3D file with geometry shaders</a></li>
+  <li><a href="http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models/shaders/geometry_shader_fun_smoothing.x3dv">Another
+    example of geometry shaders: geometry_shader_fun_smoothing</a>.</li>
+</ul>
+
+<p>We have also a more flexible approach to geometry shaders
+as part of our <a href="compositing_shaders.html">compositing shaders</a> extensions. The most important advantage is that you can implement
+only the geometry shader, and use the default vertex and fragment shader code
+(that will do the boring stuff like texturing, lighting etc.).
+Inside the geometry shader you have functions <code>geometryVertexXxx</code>
+to pass-through or blend input vertexes in any way you like.
+Everything is described in detail in our
+<a href="compositing_shaders.html">compositing shaders documentation</a>,
+ in particular see the <a href="https://castle-engine.sourceforge.io/compositing_shaders_doc/html/chapter.geometry_shaders.html">the chapter "Extensions for geometry shaders"</a>.</p>
+
+<p>Examples of geometry shaders with <code>Effect</code>:</p>
+
+<ul>
+  <li><a href="http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models/compositing_shaders/geometry_shader_simple.x3dv">geometry_shader_simple</a></li>
+  <li><a href="http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models/compositing_shaders/geometry_shader_effects.x3dv">geometry_shader_effects</a></li>
+  <li><a href="http://svn.code.sf.net/p/castle-engine/code/trunk/demo_models/compositing_shaders/geometry_shader_optional.x3dv">geometry_shader_optional</a></li>
+</ul>
+
+<h4 id="section_geometry_old">3.6.1. Geometry shaders before GLSL 1.50 not supported</h4>
+
+<p>Our implementation of geometry shaders is directed only at geometry
+shaders as available in the OpenGL core 3.2 and later (GLSL version is 1.50 or later).</p>
+
+<!-- http://www.lighthouse3d.com/tutorials/glsl-core-tutorial/geometry-shader/ -->
+
+<p>Earlier OpenGL and GLSL versions had geometry shaders
+only available through extensions:
+<a href="http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt">ARB_geometry_shader4</a>
+or <a href="http://www.opengl.org/registry/specs/EXT/geometry_shader4.txt">EXT_geometry_shader4</a>.
+They had the same purpose, but the syntax and calls were different and incompatible.
+For example, vertex positions were in <code>gl_PositionIn</code> instead of <code>gl_in</code>.
+
+<p>The most important incompatibility was that the <i>input
+and output primitive types</i>, and the <i>maximum number of vertices
+generated</i>, were specified outside of the shader source code.
+To handle this, an X3D browser would have to do special OpenGL calls
+(<code>glProgramParameteriARB/EXT</code>),
+and these additional parameters must be placed inside the special
+fields of the <code>ComposedShader</code>.
+<a href="http://doc.instantreality.org/documentation/nodetype/ComposedShader/">InstantReality
+ComposedShader</a> adds additional fields <code>geometryInputType</code>,
+<code>geometryOutputType</code>, <code>geometryVerticesOut</code> specifically
+for this purpose
+(see also the bottom of <a href="http://doc.instantreality.org/tutorial/shader-programs/">InstantReality
+shaders overview</a>).</p>
+
+<!--
+http://www.opengl.org/wiki/Geometry_Shader
+http://www.opengl.org/wiki/Tutorial4:_Using_Indices_and_Geometry_Shaders_%28C_/SDL%29
+ -->
+
+<p>See <a href="https://en.wikipedia.org/w/index.php?title=OpenGL_Shading_Language&direction=prev&oldid=738650243#A_sample_trivial_GLSL_geometry_shader">simple example on Wikipedia of GLSL geometry shader differences before and after GLSL 1.50</a>.</p>
+
+<p>We have decided to <b>not implement the old style geometry shaders</b>.
+The implementation would complicate the code
+(need to handle new fields of the <code>ComposedShader</code> node),
+and have little benefit (usable only for old OpenGL versions;
+to make geometry shaders work with both old and new OpenGL versions,
+authors would have to provide two separate versions of their geometry shaders).</p>
+
+<p>So we just require new geometry shaders to conform to GLSL &gt;= 1.50
+syntax.
+On older GPUs, you will not be able to use geometry shaders at all.</p>
+
+<h4 id="section_geometry_input_size">3.6.2. Macro CASTLE_GEOMETRY_INPUT_SIZE</h4>
+
+<p>Unfortunately, ATI graphic cards have problems with geometry shader inputs.
+When the input array may be indexed by a variable (not a constant),
+it has to be declared with an explicit size.
+Otherwise you get shader compilation errors
+<i>'[' : array must be redeclared with a size before being indexed with a variable</i>.
+The input size actually depends
+on the input primitive, so in general you have to write:</p>
+
+<pre class="c">in <span class="kw4">float</span> my_variable<span class="br0">&#91;</span>gl_in.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy0">;</span></pre>
+<p>Unfortunately, the above syntax does not work on NVidia,
+that does not know that <code>gl_in.length()</code> is constant.
+On the other hand, NVidia doesn't require input array declaration.
+So you have to write:</p>
+
+<pre class="c">in <span class="kw4">float</span> my_variable<span class="br0">&#91;</span><span class="br0">&#93;</span><span class="sy0">;</span></pre>
+<p>That's very cool, right? We know how to do it on ATI, but it doesn't
+work on NVidia. We know how to do it on NVidia, but it doesn't work on ATI.
+Welcome to the world of modern computer graphics :)</p>
+
+<p>To enable you to write simple and robust geometry shaders,
+our engine allows you to use a macro <code>CASTLE_GEOMETRY_INPUT_SIZE</code>
+that expands to appropriate text (or nothing) for current GPU.
+So you can just write:</p>
+
+<pre class="c">in <span class="kw4">float</span> my_variable<span class="br0">&#91;</span>CASTLE_GEOMETRY_INPUT_SIZE<span class="br0">&#93;</span><span class="sy0">;</span></pre>
+<h3 id="section_log_shaders">3.7. Inspecting and customizing shaders generated by the engine</h3>
+
+<p>The engine can generate GLSL shaders
+(as X3D <code>ComposedShader</code> node) to render your shapes.
+This happens automatically under the hood in many situations (for example
+when your shapes require bump mapping or shadow maps, or when you
+compile for OpenGLES &gt;= 2). You can run
+<a href="view3dscene.html">view3dscene</a> with a command-line option <code>--debug-log-shaders</code>
+and force rendering using shaders (for example by menu option
+<i>View -&gt; Shaders -&gt; Enable For Everything</i>)
+to view the generated GLSL code for your shaders in the console.
+You can even copy them, as a <code>ComposedShader</code> node,
+and adjust, if you like.
+
+<h3 id="section_todos">3.8. TODOs</h3>
+
+<p>TODO: <code>activate</code> event doesn't work to relink the GLSL
+program now. (<code>isSelected</code> and <code>isValid</code> work perfectly for any
+X3DShaderNode.)
+
+</div><div class="col-sm-3 col-sm-pull-9 well sidebar">
+  <div class="sidebar">
+    <div class="sidebar_title"><a href="vrml_x3d.html">Scene Graph (X3D)</a></div><ul><li><a href="demo_models.html">Demo models</a></li><li><a href="x3d_implementation_status.html">Standard X3D Components</a><ul><li><a href="x3d_implementation_core.html">Core</a></li><li><a href="x3d_implementation_time.html">Time</a></li><li><a href="x3d_implementation_networking.html">Networking</a></li><li><a href="x3d_implementation_grouping.html">Grouping</a></li><li><a href="x3d_implementation_rendering.html">Rendering</a></li><li><a href="x3d_implementation_shape.html">Shape</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_shape_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_geometry3d.html">Geometry3D</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_geometry3d_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_geometry2d.html">Geometry2D</a></li><li><a href="x3d_implementation_text.html">Text</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_text_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_sound.html">Sound</a></li><li><a href="x3d_implementation_lighting.html">Lighting</a></li><li><a href="x3d_implementation_texturing.html">Texturing</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_texturing_extensions.php">Extensions</a></li><li><a href="https://castle-engine.sourceforge.io/x3d_multi_texturing.php">X3D MultiTexturing problems and proposed solutions</a></li></ul></li><li><a href="x3d_implementation_interpolation.html">Interpolation</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_interpolation_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_pointingdevicesensor.html">Pointing device sensor</a></li><li><a href="x3d_implementation_keydevicesensor.html">Key device sensor</a></li><li><a href="x3d_implementation_environmentalsensor.html">Environmental sensor</a></li><li><a href="x3d_implementation_navigation.html">Navigation</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_navigation_extensions.php">Extensions</a></li></ul></li><li><a href="x3d_implementation_environmentaleffects.html">Environmental effects</a></li><li><a href="x3d_implementation_hanim.html">H-Anim</a></li><li><a href="x3d_implementation_nurbs.html">NURBS</a><ul><li><a href="x3d_implementation_nurbs.html#section_homogeneous_coordinates">Control points are in homogeneous coordinates</a></li></ul></li><li><a href="x3d_implementation_scripting.html">Scripting</a></li><li><a href="x3d_implementation_eventutilities.html">Event utilities</a><ul><li><a href="https://castle-engine.sourceforge.io/x3d_implementation_eventutilities_extensions.php">Extensions</a></li></ul></li><li>Programmable shaders</li><li><a href="x3d_implementation_cadgeometry.html">CAD geometry</a></li><li><a href="x3d_implementation_texturing3d.html">Texturing3D</a></li><li><a href="x3d_implementation_cubemaptexturing.html">Cube map environmental texturing</a></li></ul></li><li><a href="https://castle-engine.sourceforge.io/x3d_larger_extensions.php">Larger X3D Extensions</a><ul><li><a href="compositing_shaders.html">Compositing Shaders</a></li><li><a href="x3d_extensions_screen_effects.html">Screen Effects</a></li><li><a href="x3d_extensions_shadow_maps.html">Shadow Maps</a></li><li><a href="https://castle-engine.sourceforge.io/x3d_extensions_shadow_volumes.php">Shadow Volumes</a></li><li><a href="x3d_extensions_vrml1.html">(Old) VRML 1.0</a></li></ul></li><li><a href="x3d_extensions.html">Complete list of X3D Extensions</a></li><li><a href="castle_script.html">CastleScript language reference</a></li><li><a href="castle_animation_frames.html">Castle Animation Frames (castle-anim-frames) file format</a></li><li><a href="x3d_time_origin_considered_uncomfortable.html">VRML / X3D time origin considered uncomfortable</a></li><li><a href="nist_vrml_test_suite.html">NIST conformace test suite</a></li></ul></div></div></div></div>
+
+  <div class="panel-footer">
+    <p><span class="page_copyright">Copyright <a href="http://michalis.ii.uni.wroc.pl/~michalis/">Michalis Kamburelis</a>.
+    Some images copyright <a href="http://cat-astrophe-games.com/">Cat-astrophe Games</a> and Paweł Wojciechowicz.
+    You can redistribute this on terms of the
+    <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</span>
+
+    <p><a href="https://sourceforge.net/projects/castle-engine">Hosted by SourceForge.net</a>.
+
+    <p>We use <a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>.
+    Like every other frickin' website on the Internet.
+    Blink twice if you understand.
+  </div>
+
+  
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins).
+     Used also by colorbox. -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/js/jquery.min.js" type="text/javascript"></script>
+<!-- Include colorbox after jQuery is known -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery('a.screenshot').colorbox({opacity: 0.9, rel:'screenshot', maxWidth:'90%', maxHeight:'90%'});
+</script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://castle-engine.sourceforge.io/kambi-php-lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
